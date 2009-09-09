@@ -12,11 +12,13 @@
 @implementation ParCoordsView
 
 - (void)awakeFromNib {
+	data = [[DataSet alloc] init];
+	
 	[[self layer] setBackgroundColor:CGColorGetConstantColor(kCGColorWhite)];
-	CALayer *l = [CALayer layer];
-	l.frame = CGRectMake(100, 100, 100, 100);
-	l.backgroundColor = CGColorGetConstantColor(kCGColorBlack);
-	[[self layer] addSublayer:l];
+	
+	background = [[ParCoordsBackgroundLayer alloc] initWithDataSet:data];
+	background.frame = [self layer].frame;
+	[[self layer] addSublayer:background];
 }
 
 #pragma mark -

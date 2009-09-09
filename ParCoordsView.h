@@ -8,9 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>
+#import "DataSet.h"
+#import "ParCoordsBackgroundLayer.h"
 
 @interface ParCoordsView : NSView {
 
+	DataSet *data;
+	
+	ParCoordsBackgroundLayer *background;
+	
 }
 
 @end
