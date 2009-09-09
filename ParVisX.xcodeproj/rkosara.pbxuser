@@ -1,0 +1,165 @@
+// !$*UTF8*$!
+{
+	256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 440}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 315}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4398ADE01057FF9200C025AA /* ParVisX */;
+		activeTarget = 8D1107260486CEB800E47090 /* ParVisX */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* ParVisX */,
+		);
+		codeSenseManager = 4398ADE61057FFB000C025AA /* Code sense */;
+		executables = (
+			4398ADE01057FF9200C025AA /* ParVisX */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					834,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 274202762;
+			PBXWorkspaceStateSaveDate = 274202762;
+		};
+		perUserProjectItems = {
+			4398ADFD1058006D00C025AA = 4398ADFD1058006D00C025AA /* PBXTextBookmark */;
+			4398AE171058008700C025AA = 4398AE171058008700C025AA /* PBXTextBookmark */;
+			4398AE21105800B600C025AA /* PBXTextBookmark */ = 4398AE21105800B600C025AA /* PBXTextBookmark */;
+			4398AE22105800B600C025AA /* PBXTextBookmark */ = 4398AE22105800B600C025AA /* PBXTextBookmark */;
+			4398AE23105800B600C025AA /* PBXTextBookmark */ = 4398AE23105800B600C025AA /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4398ADE51057FFB000C025AA /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4398ADE01057FF9200C025AA /* ParVisX */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = ParVisX;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	4398ADE51057FFB000C025AA /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4398ADE61057FFB000C025AA /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4398ADF11057FFE200C025AA /* ParCoordsView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 440}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 246}";
+		};
+	};
+	4398ADFD1058006D00C025AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
+		name = "ParCoordsView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	4398AE171058008700C025AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
+		name = "ParCoordsView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	4398AE21105800B600C025AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */;
+		name = "ParVisXAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 315;
+		vrLoc = 0;
+	};
+	4398AE22105800B600C025AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
+		name = "ParCoordsView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	4398AE23105800B600C025AA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
+		name = "ParCoordsView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	8D1107260486CEB800E47090 /* ParVisX */ = {
+		activeExec = 0;
+		executables = (
+			4398ADE01057FF9200C025AA /* ParVisX */,
+		);
+	};
+}
