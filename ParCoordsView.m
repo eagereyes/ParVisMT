@@ -44,6 +44,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	axisHighlight2.backgroundColor = CGColorCreate(space, highlightColor);
 	CGColorSpaceRelease(space);
 	[[self layer] addSublayer:axisHighlight2];
+	
+	[NSCursor hide];
 }
 
 #pragma mark -

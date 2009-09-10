@@ -33,7 +33,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					835,
+					836,
 					20,
 					48,
 					43,
@@ -50,8 +50,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 274216087;
-			PBXWorkspaceStateSaveDate = 274216087;
+			PBXPerProjectTemplateStateSaveDate = 274284684;
+			PBXWorkspaceStateSaveDate = 274284684;
 		};
 		perUserProjectItems = {
 			43819FBD105884A900C92BFF /* PBXTextBookmark */ = 43819FBD105884A900C92BFF /* PBXTextBookmark */;
@@ -67,11 +67,13 @@
 			4381A16C1058A63E00C92BFF /* PBXTextBookmark */ = 4381A16C1058A63E00C92BFF /* PBXTextBookmark */;
 			4381A16D1058A63E00C92BFF /* PBXTextBookmark */ = 4381A16D1058A63E00C92BFF /* PBXTextBookmark */;
 			4381A17B1058A7CC00C92BFF /* PBXTextBookmark */ = 4381A17B1058A7CC00C92BFF /* PBXTextBookmark */;
-			4381A17C1058A7CC00C92BFF /* PBXTextBookmark */ = 4381A17C1058A7CC00C92BFF /* PBXTextBookmark */;
-			4381A1831058ADD700C92BFF /* PBXTextBookmark */ = 4381A1831058ADD700C92BFF /* PBXTextBookmark */;
 			4398AEB210582BDF00C025AA /* PBXTextBookmark */ = 4398AEB210582BDF00C025AA /* PBXTextBookmark */;
 			4398AECC1058323400C025AA /* PBXTextBookmark */ = 4398AECC1058323400C025AA /* PBXTextBookmark */;
 			4398AECD1058323400C025AA /* PBXTextBookmark */ = 4398AECD1058323400C025AA /* PBXTextBookmark */;
+			43BCD67D10594C9D00B92ECC /* PBXBookmark */ = 43BCD67D10594C9D00B92ECC /* PBXBookmark */;
+			43BCD67E10594CAA00B92ECC /* PBXTextBookmark */ = 43BCD67E10594CAA00B92ECC /* PBXTextBookmark */;
+			43BCD67F10594CAA00B92ECC /* PBXTextBookmark */ = 43BCD67F10594CAA00B92ECC /* PBXTextBookmark */;
+			43BCD68210594CAA00B92ECC /* PlistBookmark */ = 43BCD68210594CAA00B92ECC /* PlistBookmark */;
 		};
 		sourceControlManager = 4398ADE51057FFB000C025AA /* Source Control */;
 		userBuildSettings = {
@@ -117,6 +119,7 @@
 	};
 	43819FBE105884A900C92BFF /* CIVector.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = CIVector.h;
 		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CIVector.h;
 		sourceTree = "<absolute>";
@@ -130,9 +133,9 @@
 	};
 	4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 637}}";
-			sepNavSelRange = "{179, 0}";
-			sepNavVisRange = "{41, 1282}";
+			sepNavIntBoundsRect = "{{0, 0}, {1014, 650}}";
+			sepNavSelRange = "{786, 0}";
+			sepNavVisRange = "{146, 1323}";
 		};
 	};
 	4381A0C51058984200C92BFF /* PBXTextBookmark */ = {
@@ -255,26 +258,6 @@
 		vrLen = 671;
 		vrLoc = 0;
 	};
-	4381A17C1058A7CC00C92BFF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
-		name = "ParCoordsView.m: 45";
-		rLen = 0;
-		rLoc = 1218;
-		rType = 0;
-		vrLen = 1181;
-		vrLoc = 218;
-	};
-	4381A1831058ADD700C92BFF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
-		name = "ParCoordsView.m: 162";
-		rLen = 0;
-		rLoc = 4717;
-		rType = 0;
-		vrLen = 1242;
-		vrLoc = 3027;
-	};
 	4398ADE01057FF9200C025AA /* ParVisX */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -344,9 +327,9 @@
 	};
 	4398ADF21057FFE200C025AA /* ParCoordsView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 2639}}";
-			sepNavSelRange = "{3371, 0}";
-			sepNavVisRange = "{2775, 375}";
+			sepNavIntBoundsRect = "{{0, 0}, {1014, 2548}}";
+			sepNavSelRange = "{1310, 0}";
+			sepNavVisRange = "{169, 1161}";
 		};
 	};
 	4398AE2B10581E1900C025AA /* DataSet.h */ = {
@@ -407,10 +390,50 @@
 		vrLen = 315;
 		vrLoc = 0;
 	};
+	43BCD67D10594C9D00B92ECC /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8D1107310486CEB800E47090 /* ParVisX-Info.plist */;
+	};
+	43BCD67E10594CAA00B92ECC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
+		name = "ParCoordsView.m: 48";
+		rLen = 0;
+		rLoc = 1310;
+		rType = 0;
+		vrLen = 1161;
+		vrLoc = 169;
+	};
+	43BCD67F10594CAA00B92ECC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */;
+		name = "ParCoordsBrushLayer.m: 31";
+		rLen = 0;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 146;
+	};
+	43BCD68210594CAA00B92ECC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* ParVisX-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/rkosara/Documents/src/ParVisX/ParVisX-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
 	8D1107260486CEB800E47090 /* ParVisX */ = {
 		activeExec = 0;
 		executables = (
 			4398ADE01057FF9200C025AA /* ParVisX */,
 		);
+	};
+	8D1107310486CEB800E47090 /* ParVisX-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
+		};
 	};
 }

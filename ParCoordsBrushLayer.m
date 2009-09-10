@@ -21,28 +21,29 @@
 	return self;
 }
 
-- (void)drawInContext:(CGContextRef)ctx {
-	[super drawInContext:ctx];
+- (void)drawInContext:(CGContextRef)context {
+	[super drawInContext:context];
 	
 	int stepX = (self.frame.size.width-2*HPADDING)/([dataSet.dimensions count]-1);
-	
-	
+
+	CGMutablePathRef path = CGPathCreateMutable();
 	float height = self.frame.size.height-2*VPADDING;
 	for (int i = 0; i < [dataSet numValues]; i++) {
 		if (dataSet.brushed[i]) {
 			int x = HPADDING;
 			DataDimension *dim = [dataSet.dimensions objectAtIndex:0];
-			CGContextMoveToPoint(ctx, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+			CGPathMoveToPoint(path, NULL, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
 			for (int j = 1; j < [dataSet.dimensions count]; j++) {
 				x += stepX;
 				dim = [dataSet.dimensions objectAtIndex:j];
-				CGContextAddLineToPoint(ctx, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+				CGPathAddLineToPoint(path, NULL, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
 			}
 		}
 	}
 
-	CGContextSetStrokeColor(ctx, CGColorGetComponents(CGColorGetConstantColor(kCGColorBlack)));
-	CGContextDrawPath(ctx, kCGPathStroke);
+	CGContextSetStrokeColor(context, CGColorGetComponents(CGColorGetConstantColor(kCGColorBlack)));
+	CGContextAddPath(context, path);
+	CGContextDrawPath(context, kCGPathStroke);
 }
 
 @end
