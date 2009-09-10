@@ -62,6 +62,18 @@ NSString *dbName = @"data.db";
 		brushed[i] = (dim.values[i] >= min) && (dim.values[i] <= max);
 }
 
+- (void)brushByDimension1:(int)axis1 dimension2:(int)axis2 from1:(float)normalizedMin1 to1:(float)normalizedMax1 from2:(float)normalizedMin2 to2:(float)normalizedMax2 {
+	DataDimension *dim1 = [dimensions objectAtIndex:axis1];
+	DataDimension *dim2 = [dimensions objectAtIndex:axis2];
+	float min1 = normalizedMin1*(dim1.max-dim1.min)+dim1.min;
+	float max1 = normalizedMax1*(dim1.max-dim1.min)+dim1.min;
+	float min2 = normalizedMin2*(dim2.max-dim2.min)+dim2.min;
+	float max2 = normalizedMax2*(dim2.max-dim2.min)+dim2.min;
+	for (int i = 0; i < dim1.numValues; i++)
+		brushed[i] = (dim1.values[i] >= min1) && (dim1.values[i] <= max1)
+					 && (dim2.values[i] >= min2) && (dim2.values[i] <= max2);
+}
+
 - (void)resetBrush {
 	memset(brushed, YES, 500 * sizeof(BOOL));
 }

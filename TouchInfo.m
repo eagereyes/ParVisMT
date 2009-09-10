@@ -22,4 +22,14 @@
 	return self;
 }
 
+- (NSComparisonResult)compareX:(TouchInfo *)other {
+	if (x < other.x)
+		return NSOrderedAscending;
+	else if (x > other.x)
+		return NSOrderedDescending;
+	else
+		return NSOrderedSame;
+}
+
+
 @end

@@ -22,5 +22,6 @@
 
 - (id)initWithInitialX:(float)initialX Y:(float)initialY;
 
+- (NSComparisonResult)compareX:(TouchInfo *)other;
 
 @end

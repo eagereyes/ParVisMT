@@ -25,6 +25,8 @@
 	
 	CALayer *axisHighlight;
 
+	CALayer *axisHighlight2;
+
 	int activeAxis;
 	
 	int previousCount;

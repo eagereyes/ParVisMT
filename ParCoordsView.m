@@ -37,8 +37,13 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	axisHighlight.hidden = YES;
 	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
 	axisHighlight.backgroundColor = CGColorCreate(space, highlightColor);
-	CGColorSpaceRelease(space);
 	[[self layer] addSublayer:axisHighlight];
+
+	axisHighlight2 = [CALayer layer];
+	axisHighlight2.hidden = YES;
+	axisHighlight2.backgroundColor = CGColorCreate(space, highlightColor);
+	CGColorSpaceRelease(space);
+	[[self layer] addSublayer:axisHighlight2];
 }
 
 #pragma mark -
@@ -50,12 +55,14 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 - (void)touchesMovedWithEvent:(NSEvent *)event {
 	NSSet *touches = [event touchesMatchingPhase:NSTouchPhaseMoved inView:self];
 	for (NSTouch *t in touches) {
+		float x = MIN(MAX(t.normalizedPosition.x*1.2-.1, 0), 1);
+		float y = MIN(MAX(t.normalizedPosition.y*1.2-.1, 0), 1);
 		TouchInfo *info = [touchData objectForKey:t.identity];
 		if (info != nil) {
-			info.x = t.normalizedPosition.x;
-			info.y = t.normalizedPosition.y;
+			info.x = x;
+			info.y = y;
 		} else {
-			info = [[[TouchInfo alloc] initWithInitialX:t.normalizedPosition.x Y:t.normalizedPosition.y] autorelease];
+			info = [[[TouchInfo alloc] initWithInitialX:x Y:y] autorelease];
 			[touchData setObject:info forKey:t.identity];
 		}
 	}
@@ -73,8 +80,11 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 
 - (void)handleTouches {
 	int highlightedAxis = -1;
+	int highlightedAxis2 = -1;
 	int y = 0;
 	int height = [self frame].size.height-2*VPADDING;
+	int y2 = 0;
+	int height2 = height;
 	switch([touchData count]) {
 		case 1:
 			{
@@ -101,6 +111,34 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			}
 			break;
 
+		case 4:
+			{
+				NSArray *touches = [[touchData allValues] sortedArrayUsingSelector:@selector(compareX:)];
+				TouchInfo *t1 = [touches objectAtIndex:0];
+				TouchInfo *t2 = [touches objectAtIndex:1];
+				TouchInfo *t3 = [touches objectAtIndex:2];
+				TouchInfo *t4 = [touches objectAtIndex:3];
+				int axis1 = (int)((t1.x+t2.x)/2*[data.dimensions count]);
+				if (activeAxis >= 0)
+					highlightedAxis = activeAxis;
+				else
+					highlightedAxis = (int)((t1.x+t2.x)/2*[data.dimensions count]);
+				float minY1 = MIN(t1.y, t2.y);
+				float maxY1 = MAX(t1.y, t2.y);
+				y = (int)(minY1*height);
+				height = (int)(height*(maxY1-minY1));
+
+				highlightedAxis2 = (int)((t3.x+t4.x)/2*[data.dimensions count]);
+				float minY2 = MIN(t3.y, t4.y);
+				float maxY2 = MAX(t3.y, t4.y);
+				y2 = (int)(minY2*height2);
+				height2 = (int)(height2*(maxY2-minY2));
+				[data brushByDimension1:highlightedAxis dimension2:highlightedAxis2 from1:minY1 to1:maxY1 from2:minY2 to2:maxY2];
+				[brushLayer setNeedsDisplay];
+				
+			}
+			break;
+			
 		default:
 			break;
 	}
@@ -116,15 +154,27 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			[CATransaction begin];
 			[CATransaction setValue:[NSNumber numberWithInt:0] forKey:kCATransactionAnimationDuration];
 		}
-		
+				
 		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
 										 VPADDING+y-1, 3, height+2);
+
+		if ([touchData count] == 4) {
+			axisHighlight2.frame = CGRectMake(HPADDING+(highlightedAxis2)*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
+											  VPADDING+y2-1, 3, height2+2);
+			axisHighlight2.hidden = NO;
+		} else {
+			axisHighlight2.hidden = YES;
+		}
+
+
 		if ([touchData count] > 1)
 			[CATransaction commit];
 		
 		axisHighlight.hidden = NO;
-	} else
+	} else {
 		axisHighlight.hidden = YES;
+		axisHighlight2.hidden = YES;
+	}
 
 	activeAxis = highlightedAxis;
 	previousCount = [touchData count];
