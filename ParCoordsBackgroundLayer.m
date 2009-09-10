@@ -8,8 +8,10 @@
 
 #import "ParCoordsBackgroundLayer.h"
 
-int HPADDING = 20;
-int VPADDING = 20;
+const int HPADDING = 20;
+const int VPADDING = 20;
+
+const CGFloat greycomponents[] = {0.9, 0.9, 0.9, 1};
 
 @implementation ParCoordsBackgroundLayer
 
@@ -17,6 +19,7 @@ int VPADDING = 20;
 	if ((self = [super init])) {
 		dataSet = d;
 		self.backgroundColor = CGColorGetConstantColor(kCGColorWhite);
+//		self.opaque = YES;
 		[self setNeedsDisplay];
 		[self setNeedsDisplayOnBoundsChange:YES];
 		self.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
@@ -34,7 +37,8 @@ int VPADDING = 20;
 		CGContextAddLineToPoint(ctx, x, self.frame.size.height-VPADDING);
 		x += stepX;
 	}
-	CGContextSetStrokeColor(ctx, CGColorGetComponents(CGColorGetConstantColor(kCGColorBlack)));
+	
+	CGContextSetStrokeColor(ctx, greycomponents);
 	CGContextDrawPath(ctx, kCGPathStroke);
 	
 	float height = self.frame.size.height-2*VPADDING;
@@ -49,7 +53,6 @@ int VPADDING = 20;
 		}
 	}
 	CGContextDrawPath(ctx, kCGPathStroke);
-	
 }
 
 @end

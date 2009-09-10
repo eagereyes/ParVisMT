@@ -13,11 +13,17 @@
 
 	NSMutableArray *dimensions;
 	
+	BOOL *brushed;
 }
 
 @property (nonatomic, readonly) NSArray *dimensions;
 
+@property (nonatomic, readonly) BOOL *brushed;
 
 - (int)numValues;
+
+- (void)brushByDimension:(int)axis from:(float)normalizedMin to:(float)normalizedMax;
+
+- (void)resetBrush;
 
 @end

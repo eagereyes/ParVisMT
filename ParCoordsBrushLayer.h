@@ -1,5 +1,5 @@
 //
-//  ParCoordsBackgroundLayer.h
+//  ParCoordsBrushLayer.h
 //  ParVisX
 //
 //  Created by Robert Kosara on 9/9/09.
@@ -13,10 +13,10 @@
 extern const int HPADDING;
 extern const int VPADDING;
 
-@interface ParCoordsBackgroundLayer : CALayer {
+@interface ParCoordsBrushLayer : CALayer {
 
 	DataSet *dataSet;
-	
+
 }
 
 - (id)initWithDataSet:(DataSet *)d;

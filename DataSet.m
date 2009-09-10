@@ -18,12 +18,17 @@ NSString *dbName = @"data.db";
 @implementation DataSet
 
 @synthesize dimensions;
+@synthesize brushed;
 
 - (id)init {
 	if ((self = [super init])) {
 		dimensions = [NSMutableArray arrayWithCapacity:NUM_DIMENSIONS];
+		[dimensions retain];
 		for (int i = 0; i < NUM_DIMENSIONS; i++)
 			[dimensions addObject:[[DataDimension alloc] init]];
+
+		brushed = calloc(500, sizeof(BOOL));
+		[self resetBrush];
 		
 		FMDatabase *db = [[FMDatabase alloc] initWithPath:[[NSBundle mainBundle] pathForResource:dbName ofType:nil]];
 		if ([db open]) {
@@ -40,13 +45,25 @@ NSString *dbName = @"data.db";
 			NSLog(@"Could not open DB!");
 		}
 
-		NSLog(@"%d rows", [self numValues]);
+//		NSLog(@"%d rows", [self numValues]);
 	}
 	return self;
 }
 
 - (int)numValues {
 	return ((DataDimension *)[dimensions objectAtIndex:0]).numValues;
+}
+
+- (void)brushByDimension:(int)axis from:(float)normalizedMin to:(float)normalizedMax {
+	DataDimension *dim = [dimensions objectAtIndex:axis];
+	float min = normalizedMin*(dim.max-dim.min)+dim.min;
+	float max = normalizedMax*(dim.max-dim.min)+dim.min;
+	for (int i = 0; i < dim.numValues; i++)
+		brushed[i] = (dim.values[i] >= min) && (dim.values[i] <= max);
+}
+
+- (void)resetBrush {
+	memset(brushed, YES, 500 * sizeof(BOOL));
 }
 
 @end
