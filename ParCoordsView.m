@@ -29,21 +29,24 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	background.frame = [self layer].frame;
 	[[self layer] addSublayer:background];
 
+	brushShapeLayer = [[BrushShapeLayer alloc] init];
+	brushShapeLayer.frame = CGRectMake(0, 0, ([self layer].frame.size.width-2*HPADDING)/([data.dimensions count]-1), [self layer].frame.size.height);
+	[[self layer] addSublayer:brushShapeLayer];
+
 	brushLayer = [[ParCoordsBrushLayer alloc] initWithDataSet:data];
 	brushLayer.frame = [self layer].frame;
 	[[self layer] addSublayer:brushLayer];
 	
 	axisHighlight = [CALayer layer];
 	axisHighlight.hidden = YES;
-	CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-	axisHighlight.backgroundColor = CGColorCreate(space, highlightColor);
+	axisHighlight.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, 1.000);
 	[[self layer] addSublayer:axisHighlight];
 
 	axisHighlight2 = [CALayer layer];
 	axisHighlight2.hidden = YES;
-	axisHighlight2.backgroundColor = CGColorCreate(space, highlightColor);
-	CGColorSpaceRelease(space);
+	axisHighlight2.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, 1.000);
 	[[self layer] addSublayer:axisHighlight2];
+		
 	
 	[NSCursor hide];
 }
@@ -131,6 +134,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				height = (int)(height*(maxY1-minY1));
 
 				highlightedAxis2 = (int)((t3.x+t4.x)/2*[data.dimensions count]);
+				if (highlightedAxis2 == highlightedAxis)
+					highlightedAxis2 = highlightedAxis+1;
 				float minY2 = MIN(t3.y, t4.y);
 				float maxY2 = MAX(t3.y, t4.y);
 				y2 = (int)(minY2*height2);
@@ -161,13 +166,23 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 										 VPADDING+y-1, 3, height+2);
 
 		if ([touchData count] == 4) {
-			axisHighlight2.frame = CGRectMake(HPADDING+(highlightedAxis2)*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
+			if (highlightedAxis2 == highlightedAxis+1) {
+				[brushShapeLayer setPointsAtY1:VPADDING+y Y2:VPADDING+y+height Y3:VPADDING+y2+height2 Y4:VPADDING+y2];
+				brushShapeLayer.frame = CGRectMake(HPADDING+highlightedAxis*(frame.size.width-2*HPADDING)/([data.dimensions count]-1),
+												   0, brushShapeLayer.frame.size.width, brushShapeLayer.frame.size.height);
+				[brushShapeLayer setNeedsDisplay];
+				brushShapeLayer.hidden = NO;
+			} else {
+				brushShapeLayer.hidden = YES;
+			}
+
+			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
 											  VPADDING+y2-1, 3, height2+2);
 			axisHighlight2.hidden = NO;
 		} else {
+			brushShapeLayer.hidden = YES;
 			axisHighlight2.hidden = YES;
 		}
-
 
 		if ([touchData count] > 1)
 			[CATransaction commit];

@@ -41,9 +41,9 @@
 		}
 	}
 
-	CGContextSetStrokeColor(context, CGColorGetComponents(CGColorGetConstantColor(kCGColorBlack)));
+	CGContextSetGrayStrokeColor(context, 0, 1);
 	CGContextAddPath(context, path);
-	CGContextDrawPath(context, kCGPathStroke);
+	CGContextStrokePath(context);
 }
 
 @end

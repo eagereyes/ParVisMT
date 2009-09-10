@@ -11,8 +11,6 @@
 const int HPADDING = 20;
 const int VPADDING = 20;
 
-const CGFloat greycomponents[] = {0.9, 0.9, 0.9, 1};
-
 @implementation ParCoordsBackgroundLayer
 
 - (id)initWithDataSet:(DataSet *)d {
@@ -38,7 +36,7 @@ const CGFloat greycomponents[] = {0.9, 0.9, 0.9, 1};
 		x += stepX;
 	}
 	
-	CGContextSetStrokeColor(ctx, greycomponents);
+	CGContextSetGrayStrokeColor(ctx, 0.9, 1);
 	CGContextDrawPath(ctx, kCGPathStroke);
 	
 	float height = self.frame.size.height-2*VPADDING;

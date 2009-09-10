@@ -13,7 +13,7 @@
 #import "ParCoordsBackgroundLayer.h"
 #import "ParCoordsBrushLayer.h"
 #import "TouchInfo.h"
-
+#import "BrushShapeLayer.h"
 
 @interface ParCoordsView : NSView {
 
@@ -22,6 +22,8 @@
 	ParCoordsBackgroundLayer *background;
 	
 	ParCoordsBrushLayer *brushLayer;
+	
+	BrushShapeLayer *brushShapeLayer;
 	
 	CALayer *axisHighlight;
 
