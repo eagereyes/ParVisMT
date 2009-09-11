@@ -29,10 +29,6 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	background.frame = [self layer].frame;
 	[[self layer] addSublayer:background];
 
-	brushShapeLayer = [[BrushShapeLayer alloc] init];
-	brushShapeLayer.frame = CGRectMake(0, 0, ([self layer].frame.size.width-2*HPADDING)/([data.dimensions count]-1), [self layer].frame.size.height);
-	[[self layer] addSublayer:brushShapeLayer];
-
 	brushLayer = [[ParCoordsBrushLayer alloc] initWithDataSet:data];
 	brushLayer.frame = [self layer].frame;
 	[[self layer] addSublayer:brushLayer];
@@ -87,10 +83,12 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	int highlightedAxis = -1;
 	int highlightedAxis2 = -1;
 	int y = 0;
-	int height = [self frame].size.height-2*VPADDING;
+	int height = [self frame].size.height-(TOPPADDING+BOTTOMPADDING);
 	int y2 = 0;
 	int height2 = height;
+	int stepX = ([self frame].size.width-2*HPADDING)/([data.dimensions count]-1);
 	NSArray *touches = [[touchData allValues] sortedArrayUsingSelector:@selector(compareX:)];
+	[brushLayer clearBrushShape];
 	switch([touchData count]) {
 		case 1:
 			{
@@ -126,12 +124,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				else
 					highlightedAxis = (int)(t1.x*[data.dimensions count]);
 				[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
+				[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+t1.y*height Y2:BOTTOMPADDING+t2.y*height Y3:BOTTOMPADDING+t3.y*height];
 				[brushLayer setNeedsDisplay];
-				[brushShapeLayer setPointsAtY1:VPADDING+t1.y*height Y2:VPADDING+t2.y*height Y3:VPADDING+t3.y*height];
-				brushShapeLayer.frame = CGRectMake(HPADDING+highlightedAxis*(self.frame.size.width-2*HPADDING)/([data.dimensions count]-1),
-												   0, brushShapeLayer.frame.size.width, brushShapeLayer.frame.size.height);
-				[brushShapeLayer setNeedsDisplay];
-				brushShapeLayer.hidden = NO;
 			}
 			break;
 			
@@ -158,6 +152,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				y2 = (int)(minY2*height2);
 				height2 = (int)(height2*(maxY2-minY2));
 				[data brushByDimension1:highlightedAxis dimension2:highlightedAxis2 from1:minY1 to1:maxY1 from2:minY2 to2:maxY2];
+				if (highlightedAxis2 == highlightedAxis+1)
+					[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+y Y2:BOTTOMPADDING+y+height Y3:BOTTOMPADDING+y2+height2 Y4:BOTTOMPADDING+y2];
 				[brushLayer setNeedsDisplay];
 			}
 			break;
@@ -172,31 +168,17 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	}
 	
 	if (highlightedAxis >= 0) {
-		NSRect frame = [self frame];
 		if ([touchData count] > 1) {
 			[CATransaction begin];
 			[CATransaction setValue:[NSNumber numberWithInt:0] forKey:kCATransactionAnimationDuration];
 		}
 				
-		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
-										 VPADDING+y-1, 3, height+2);
+		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*stepX-1, BOTTOMPADDING+y-1, 3, height+2);
 
 		if ([touchData count] == 4) {
-			if (highlightedAxis2 == highlightedAxis+1) {
-				[brushShapeLayer setPointsAtY1:VPADDING+y Y2:VPADDING+y+height Y3:VPADDING+y2+height2 Y4:VPADDING+y2];
-				brushShapeLayer.frame = CGRectMake(HPADDING+highlightedAxis*(frame.size.width-2*HPADDING)/([data.dimensions count]-1),
-												   0, brushShapeLayer.frame.size.width, brushShapeLayer.frame.size.height);
-				[brushShapeLayer setNeedsDisplay];
-				brushShapeLayer.hidden = NO;
-			} else {
-				brushShapeLayer.hidden = YES;
-			}
-
-			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*(frame.size.width-2*HPADDING)/([data.dimensions count]-1)-1,
-											  VPADDING+y2-1, 3, height2+2);
+			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*stepX-1, BOTTOMPADDING+y2-1, 3, height2+2);
 			axisHighlight2.hidden = NO;
 		} else {
-			brushShapeLayer.hidden = [touchData count] != 3;
 			axisHighlight2.hidden = YES;
 		}
 

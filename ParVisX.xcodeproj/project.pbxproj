@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* ParVisXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */; };
-		4362DD0610598E5000219042 /* BrushShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4362DD0510598E5000219042 /* BrushShapeLayer.m */; };
 		43819EBE1058363500C92BFF /* ParCoordsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */; };
 		43819FB01058829400C92BFF /* TouchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819FAF1058829400C92BFF /* TouchInfo.m */; };
 		4381A01D1058918900C92BFF /* ParCoordsBrushLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */; };
@@ -37,8 +36,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		4362DD0410598E5000219042 /* BrushShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushShapeLayer.h; sourceTree = "<group>"; };
-		4362DD0510598E5000219042 /* BrushShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushShapeLayer.m; sourceTree = "<group>"; };
 		43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParCoordsBackgroundLayer.h; sourceTree = "<group>"; };
 		43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParCoordsBackgroundLayer.m; sourceTree = "<group>"; };
 		43819FAE1058829400C92BFF /* TouchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInfo.h; sourceTree = "<group>"; };
@@ -179,8 +176,6 @@
 				4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */,
 				43819FAE1058829400C92BFF /* TouchInfo.h */,
 				43819FAF1058829400C92BFF /* TouchInfo.m */,
-				4362DD0410598E5000219042 /* BrushShapeLayer.h */,
-				4362DD0510598E5000219042 /* BrushShapeLayer.m */,
 			);
 			name = Visualization;
 			sourceTree = "<group>";
@@ -265,7 +260,6 @@
 				43819EBE1058363500C92BFF /* ParCoordsBackgroundLayer.m in Sources */,
 				43819FB01058829400C92BFF /* TouchInfo.m in Sources */,
 				4381A01D1058918900C92BFF /* ParCoordsBrushLayer.m in Sources */,
-				4362DD0610598E5000219042 /* BrushShapeLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

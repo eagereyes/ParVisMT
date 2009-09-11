@@ -11,15 +11,28 @@
 #import "DataDimension.h"
 
 extern const int HPADDING;
-extern const int VPADDING;
+extern const int TOPPADDING;
+extern const int BOTTOMPADDING;
 
 @interface ParCoordsBrushLayer : CALayer {
 
 	DataSet *dataSet;
 
+	int numPoints;
+	
+	int *coords;
+	
+	CGFloat leftX;
+	
+	CGFloat width;
 }
 
 - (id)initWithDataSet:(DataSet *)d;
 
+- (void)setPointsAtX:(int)x width:(int)w Y1:(int)y1 Y2:(int)y2 Y3:(int)y3 Y4:(int)y4;
+
+- (void)setPointsAtX:(int)x width:(int)w Y1:(int)y1 Y2:(int)y2 Y3:(int)y3;
+
+- (void)clearBrushShape;
 
 @end

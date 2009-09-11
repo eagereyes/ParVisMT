@@ -11,7 +11,8 @@
 #import "DataDimension.h"
 
 extern const int HPADDING;
-extern const int VPADDING;
+extern const int TOPPADDING;
+extern const int BOTTOMPADDING;
 
 @interface ParCoordsBackgroundLayer : CALayer {
 

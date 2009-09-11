@@ -9,7 +9,8 @@
 #import "ParCoordsBackgroundLayer.h"
 
 const int HPADDING = 20;
-const int VPADDING = 20;
+const int TOPPADDING = 20;
+const int BOTTOMPADDING = 40;
 
 @implementation ParCoordsBackgroundLayer
 
@@ -17,7 +18,7 @@ const int VPADDING = 20;
 	if ((self = [super init])) {
 		dataSet = d;
 		self.backgroundColor = CGColorGetConstantColor(kCGColorWhite);
-//		self.opaque = YES;
+		self.opaque = YES;
 		[self setNeedsDisplay];
 		[self setNeedsDisplayOnBoundsChange:YES];
 		self.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
@@ -25,33 +26,36 @@ const int VPADDING = 20;
 	return self;
 }
 
-- (void)drawInContext:(CGContextRef)ctx {
-	[super drawInContext:ctx];
+- (void)drawInContext:(CGContextRef)context {
+	[super drawInContext:context];
+	
+	CGContextSetGrayFillColor(context, 1, 1);
+	CGContextFillRect(context, self.bounds);
 	
 	int stepX = (self.frame.size.width-2*HPADDING)/([dataSet.dimensions count]-1);
+	float height = self.frame.size.height-(BOTTOMPADDING+TOPPADDING);
 	int x = HPADDING;
 	for (int i = 0; i < [dataSet.dimensions count]; i++) {
-		CGContextMoveToPoint(ctx, x, VPADDING);
-		CGContextAddLineToPoint(ctx, x, self.frame.size.height-VPADDING);
+		CGContextMoveToPoint(context, x, BOTTOMPADDING);
+		CGContextAddLineToPoint(context, x, height+BOTTOMPADDING);
 		x += stepX;
 	}
 	
-	CGContextSetGrayStrokeColor(ctx, 0.9, 1);
-	CGContextDrawPath(ctx, kCGPathStroke);
+	CGContextSetGrayStrokeColor(context, 0.9, 1);
+	CGContextDrawPath(context, kCGPathStroke);
 	
-	float height = self.frame.size.height-2*VPADDING;
 	for (int i = 0; i < [dataSet numValues]; i++) {
 		x = HPADDING;
 		DataDimension *dim = [dataSet.dimensions objectAtIndex:0];
-		CGContextMoveToPoint(ctx, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+		CGContextMoveToPoint(context, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
 		for (int j = 1; j < [dataSet.dimensions count]; j++) {
 			x += stepX;
 			dim = [dataSet.dimensions objectAtIndex:j];
-			CGContextAddLineToPoint(ctx, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+			CGContextAddLineToPoint(context, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
 		}
 	}
-	CGContextSetGrayStrokeColor(ctx, 0.9, 1);
-	CGContextDrawPath(ctx, kCGPathStroke);
+	CGContextSetGrayStrokeColor(context, 0.9, 1);
+	CGContextDrawPath(context, kCGPathStroke);
 }
 
 @end
