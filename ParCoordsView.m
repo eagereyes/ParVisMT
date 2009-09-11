@@ -68,7 +68,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 		}
 	}
 	
-	[self handleTouches];
+	[NSObject cancelPreviousPerformRequestsWithTarget:self];
+	[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
 }	
 
 - (void)touchesEndedWithEvent:(NSEvent *)event {
@@ -76,7 +77,9 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	for (NSTouch *t in touches) {
 		[touchData removeObjectForKey:t.identity];
 	}
-	[self handleTouches];
+
+	[NSObject cancelPreviousPerformRequestsWithTarget:self];
+	[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
 }
 
 - (void)handleTouches {
