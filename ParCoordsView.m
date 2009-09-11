@@ -90,17 +90,17 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	int height = [self frame].size.height-2*VPADDING;
 	int y2 = 0;
 	int height2 = height;
+	NSArray *touches = [[touchData allValues] sortedArrayUsingSelector:@selector(compareX:)];
 	switch([touchData count]) {
 		case 1:
 			{
-				TouchInfo *t = [[touchData allValues] objectAtIndex:0];
+				TouchInfo *t = [touches objectAtIndex:0];
 				highlightedAxis = (int)(t.x*[data.dimensions count]);
 			}
 			break;
 
 		case 2:
 			{
-				NSArray *touches = [touchData allValues];
 				TouchInfo *t1 = [touches objectAtIndex:0];
 				TouchInfo *t2 = [touches objectAtIndex:1];
 				if (activeAxis >= 0)
@@ -116,14 +116,31 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			}
 			break;
 
+		case 3:
+			{
+				TouchInfo *t1 = [touches objectAtIndex:0];
+				TouchInfo *t2 = [touches objectAtIndex:1];
+				TouchInfo *t3 = [touches objectAtIndex:2];
+				if (activeAxis >= 0)
+					highlightedAxis = activeAxis;
+				else
+					highlightedAxis = (int)(t1.x*[data.dimensions count]);
+				[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
+				[brushLayer setNeedsDisplay];
+				[brushShapeLayer setPointsAtY1:VPADDING+t1.y*height Y2:VPADDING+t2.y*height Y3:VPADDING+t3.y*height];
+				brushShapeLayer.frame = CGRectMake(HPADDING+highlightedAxis*(self.frame.size.width-2*HPADDING)/([data.dimensions count]-1),
+												   0, brushShapeLayer.frame.size.width, brushShapeLayer.frame.size.height);
+				[brushShapeLayer setNeedsDisplay];
+				brushShapeLayer.hidden = NO;
+			}
+			break;
+			
 		case 4:
 			{
-				NSArray *touches = [[touchData allValues] sortedArrayUsingSelector:@selector(compareX:)];
 				TouchInfo *t1 = [touches objectAtIndex:0];
 				TouchInfo *t2 = [touches objectAtIndex:1];
 				TouchInfo *t3 = [touches objectAtIndex:2];
 				TouchInfo *t4 = [touches objectAtIndex:3];
-				int axis1 = (int)((t1.x+t2.x)/2*[data.dimensions count]);
 				if (activeAxis >= 0)
 					highlightedAxis = activeAxis;
 				else
@@ -142,7 +159,6 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				height2 = (int)(height2*(maxY2-minY2));
 				[data brushByDimension1:highlightedAxis dimension2:highlightedAxis2 from1:minY1 to1:maxY1 from2:minY2 to2:maxY2];
 				[brushLayer setNeedsDisplay];
-				
 			}
 			break;
 			
@@ -180,7 +196,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 											  VPADDING+y2-1, 3, height2+2);
 			axisHighlight2.hidden = NO;
 		} else {
-			brushShapeLayer.hidden = YES;
+			brushShapeLayer.hidden = [touchData count] != 3;
 			axisHighlight2.hidden = YES;
 		}
 

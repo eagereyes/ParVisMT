@@ -17,5 +17,7 @@
 
 - (void)setPointsAtY1:(int)y1 Y2:(int)y2 Y3:(int)y3 Y4:(int)y4;
 
+- (void)setPointsAtY1:(int)y1 Y2:(int)y2 Y3:(int)y3;
+
 
 @end

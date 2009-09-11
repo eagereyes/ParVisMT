@@ -43,6 +43,7 @@
 
 	CGContextSetGrayStrokeColor(context, 0, 1);
 	CGContextAddPath(context, path);
+	CGPathRelease(path);
 	CGContextStrokePath(context);
 }
 

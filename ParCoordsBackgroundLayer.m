@@ -50,6 +50,7 @@ const int VPADDING = 20;
 			CGContextAddLineToPoint(ctx, x, VPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
 		}
 	}
+	CGContextSetGrayStrokeColor(ctx, 0.9, 1);
 	CGContextDrawPath(ctx, kCGPathStroke);
 }
 

@@ -74,6 +74,17 @@ NSString *dbName = @"data.db";
 					 && (dim2.values[i] >= min2) && (dim2.values[i] <= max2);
 }
 
+- (void)angularBrushDimension:(int)axis1 dimension2:(int)axis2 from:(float)minDifference to:(float)maxDifference {
+	DataDimension *dim1 = [dimensions objectAtIndex:axis1];
+	DataDimension *dim2 = [dimensions objectAtIndex:axis2];
+	float range1 = dim1.max-dim1.min;
+	float range2 = dim2.max-dim2.min;
+	for (int i = 0; i < dim1.numValues; i++) {
+		float difference = (dim1.values[i]-dim1.min)/range1-(dim2.values[i]-dim2.min)/range2;
+		brushed[i] = (difference >= minDifference) && (difference <= maxDifference);
+	}
+}
+
 - (void)resetBrush {
 	memset(brushed, YES, 500 * sizeof(BOOL));
 }
