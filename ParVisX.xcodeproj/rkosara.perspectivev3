@@ -356,20 +356,20 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4338EB0A105ADC01006C9401</string>
+										<string>4338EB9E105AE41D006C9401</string>
 										<key>history</key>
 										<array>
 											<string>43AFFC16105982C3004C5324</string>
 											<string>4362DD361059966C00219042</string>
-											<string>43DA79681059EFDE00CA586D</string>
-											<string>43DA79691059EFDE00CA586D</string>
-											<string>43DA79D8105AD82900CA586D</string>
 											<string>4338EAD0105ADA99006C9401</string>
-											<string>4338EAD1105ADA99006C9401</string>
-											<string>4338EAD2105ADA99006C9401</string>
-											<string>4338EAE7105ADB5D006C9401</string>
-											<string>4338EAFD105ADBE1006C9401</string>
-											<string>4338EAE8105ADB5D006C9401</string>
+											<string>4338EB10105ADDB7006C9401</string>
+											<string>4338EB11105ADDB7006C9401</string>
+											<string>4338EB13105ADDB7006C9401</string>
+											<string>4338EB99105AE41D006C9401</string>
+											<string>4338EB9A105AE41D006C9401</string>
+											<string>4338EB9B105AE41D006C9401</string>
+											<string>4338EB9C105AE41D006C9401</string>
+											<string>4338EB9D105AE41D006C9401</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -669,7 +669,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>274390017.32966298</real>
+	<real>274392093.16518998</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -686,7 +686,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4338EB0B105ADC01006C9401</string>
+		<string>4338EB9F105AE41D006C9401</string>
 		<string>4338EAF5105ADB5D006C9401</string>
 		<string>4338EAF6105ADB5D006C9401</string>
 		<string>/Users/rkosara/Documents/src/ParVisX/ParVisX.xcodeproj</string>
