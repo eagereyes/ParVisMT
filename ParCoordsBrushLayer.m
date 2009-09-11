@@ -49,19 +49,21 @@
 - (void)drawInContext:(CGContextRef)context {
 	[super drawInContext:context];
 
+	float height = self.frame.size.height-(TOPPADDING+BOTTOMPADDING);
+
 	if (numPoints == 4) {
 		CGContextMoveToPoint(context, leftX, coords[0]);
 		CGContextAddLineToPoint(context, leftX, coords[1]);
 		CGContextAddLineToPoint(context, leftX+width, coords[2]);
 		CGContextAddLineToPoint(context, leftX+width, coords[3]);
 	} else if (numPoints == 3) {
-		CGContextMoveToPoint(context, leftX+width*.1, coords[0]);
 		int topY = MAX(coords[1], coords[2]);
 		int bottomY = MIN(coords[1], coords[2]);
 		double startAngle = atan((double)(topY-coords[0])/width);
 		double endAngle = atan((double)(bottomY-coords[0])/width);
-		CGContextAddArc(context, leftX+width*.1, coords[0], width*.8, startAngle, endAngle, 1);
-		CGContextAddLineToPoint(context, leftX+width*.1, coords[0]);
+		CGContextMoveToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
+		CGContextAddArc(context, leftX+width*.1, BOTTOMPADDING+height/2, width*.8, startAngle, endAngle, 1);
+		CGContextAddLineToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
 	}
 	
 	CGContextSetRGBFillColor(context, 0, 0.251, 0.502, .5);
@@ -70,7 +72,6 @@
 	int stepX = (self.frame.size.width-2*HPADDING)/([dataSet.dimensions count]-1);
 
 	CGMutablePathRef path = CGPathCreateMutable();
-	float height = self.frame.size.height-(TOPPADDING+BOTTOMPADDING);
 	for (int i = 0; i < [dataSet numValues]; i++) {
 		if (dataSet.brushed[i]) {
 			int x = HPADDING;

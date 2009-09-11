@@ -126,6 +126,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 					highlightedAxis = activeAxis;
 				else
 					highlightedAxis = (int)(t1.x*[data.dimensions count]);
+				highlightedAxis2 = highlightedAxis+1;
 				[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
 				[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+t1.y*height Y2:BOTTOMPADDING+t2.y*height Y3:BOTTOMPADDING+t3.y*height];
 				[brushLayer setNeedsDisplay];
@@ -178,7 +179,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				
 		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*stepX-1, BOTTOMPADDING+y-1, 3, height+2);
 
-		if ([touchData count] == 4) {
+		if ([touchData count] >= 3) {
 			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*stepX-1, BOTTOMPADDING+y2-1, 3, height2+2);
 			axisHighlight2.hidden = NO;
 		} else {
