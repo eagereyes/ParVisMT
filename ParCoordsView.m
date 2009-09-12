@@ -210,12 +210,18 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	collectingEvents = NO;
 }
 
+- (void)mouseEntered:(NSEvent *)theEvent {
+	[NSCursor hide];
+}
+
+- (void)mouseDown:(NSEvent *)theEvent {
+	[NSCursor hide];
+}
 
 #pragma mark -
 
 - (BOOL)isOpaque {
 	return YES;
 }
-
 
 @end

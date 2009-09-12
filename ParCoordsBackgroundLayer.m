@@ -63,7 +63,12 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	CGContextSelectFont(context, "Helvetica", 16, kCGEncodingMacRoman);
 	x = HPADDING;
 	for (int i = 0; i < [dataSet.dimensions count]; i++) {
+		CGContextSetTextDrawingMode(context, kCGTextInvisible);
 		CGContextShowTextAtPoint(context, x, 10, labels[i], strlen(labels[i]));
+		CGPoint endPos = CGContextGetTextPosition(context);
+		CGContextSetTextDrawingMode(context, kCGTextFill);
+		CGContextShowTextAtPoint(context, x-(endPos.x-x)/2, 10, labels[i], strlen(labels[i]));
+		
 		x += stepX;
 	}
 }
