@@ -43,6 +43,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	axisHighlight2.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, 1.000);
 	[[self layer] addSublayer:axisHighlight2];
 		
+	collectingEvents = NO;
 	
 	[NSCursor hide];
 }
@@ -50,11 +51,15 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 #pragma mark -
 
 - (void)touchesBeganWithEvent:(NSEvent *)event {
-	[self touchesMovedWithEvent:event];
+	[self collectAndProcessTouches:NSTouchPhaseBegan inEvent:event];
 }
 
 - (void)touchesMovedWithEvent:(NSEvent *)event {
-	NSSet *touches = [event touchesMatchingPhase:NSTouchPhaseMoved inView:self];
+	[self collectAndProcessTouches:NSTouchPhaseMoved inEvent:event];
+}
+
+- (void)collectAndProcessTouches:(NSTouchPhase)phase inEvent:(NSEvent *)event {
+	NSSet *touches = [event touchesMatchingPhase:phase inView:self];
 	for (NSTouch *t in touches) {
 		float x = MIN(MAX(t.normalizedPosition.x*1.2-.1, 0), 1);
 		float y = MIN(MAX(t.normalizedPosition.y*1.2-.1, 0), 1);
@@ -68,8 +73,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 		}
 	}
 	
-	[NSObject cancelPreviousPerformRequestsWithTarget:self];
-	[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
+	if (collectingEvents == NO) {
+		[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
+		collectingEvents = YES;
+	}
 }	
 
 - (void)touchesEndedWithEvent:(NSEvent *)event {
@@ -78,8 +85,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 		[touchData removeObjectForKey:t.identity];
 	}
 
-	[NSObject cancelPreviousPerformRequestsWithTarget:self];
-	[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
+	if (collectingEvents == NO) {
+		[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
+		collectingEvents = YES;
+	}
 }
 
 - (void)handleTouches {
@@ -177,10 +186,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			[CATransaction setValue:[NSNumber numberWithInt:0] forKey:kCATransactionAnimationDuration];
 		}
 				
-		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*stepX-1, BOTTOMPADDING+y-1, 3, height+2);
+		axisHighlight.frame = CGRectMake(HPADDING+highlightedAxis*stepX-1, BOTTOMPADDING+y, 3, height);
 
 		if ([touchData count] >= 3) {
-			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*stepX-1, BOTTOMPADDING+y2-1, 3, height2+2);
+			axisHighlight2.frame = CGRectMake(HPADDING+highlightedAxis2*stepX-1, BOTTOMPADDING+y2, 3, height2);
 			axisHighlight2.hidden = NO;
 		} else {
 			axisHighlight2.hidden = YES;
@@ -197,6 +206,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 
 	activeAxis = highlightedAxis;
 	previousCount = [touchData count];
+	
+	collectingEvents = NO;
 }
 
 

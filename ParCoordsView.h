@@ -29,12 +29,15 @@
 	int activeAxis;
 	
 	int previousCount;
+
+	BOOL collectingEvents;
 	
 	// maps NSTouch IDs to TouchInfo objects
 	NSMutableDictionary *touchData;
 	
 }
 
+- (void)collectAndProcessTouches:(NSTouchPhase)phase inEvent:(NSEvent *)event;
 
 - (void)handleTouches;
 
