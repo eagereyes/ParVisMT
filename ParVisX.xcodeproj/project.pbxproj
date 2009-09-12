@@ -20,6 +20,7 @@
 		4398AE2D10581E1900C025AA /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4398AE2C10581E1900C025AA /* DataSet.m */; };
 		4398AE601058217700C025AA /* DataDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4398AE5F1058217700C025AA /* DataDimension.m */; };
 		4398AEBB10582C3100C025AA /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 4398AEBA10582C3100C025AA /* data.db */; };
+		43DCC94B105BF61700C8C455 /* TrackPadLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DCC94A105BF61700C8C455 /* TrackPadLayer.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -55,6 +56,8 @@
 		4398AE5E1058217700C025AA /* DataDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDimension.h; sourceTree = "<group>"; };
 		4398AE5F1058217700C025AA /* DataDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDimension.m; sourceTree = "<group>"; };
 		4398AEBA10582C3100C025AA /* data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.db; sourceTree = "<group>"; };
+		43DCC949105BF61700C8C455 /* TrackPadLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPadLayer.h; sourceTree = "<group>"; };
+		43DCC94A105BF61700C8C455 /* TrackPadLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPadLayer.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ParVisX-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParVisX-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ParVisX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParVisX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +179,8 @@
 				4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */,
 				43819FAE1058829400C92BFF /* TouchInfo.h */,
 				43819FAF1058829400C92BFF /* TouchInfo.m */,
+				43DCC949105BF61700C8C455 /* TrackPadLayer.h */,
+				43DCC94A105BF61700C8C455 /* TrackPadLayer.m */,
 			);
 			name = Visualization;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				43819EBE1058363500C92BFF /* ParCoordsBackgroundLayer.m in Sources */,
 				43819FB01058829400C92BFF /* TouchInfo.m in Sources */,
 				4381A01D1058918900C92BFF /* ParCoordsBrushLayer.m in Sources */,
+				43DCC94B105BF61700C8C455 /* TrackPadLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

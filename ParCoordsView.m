@@ -35,16 +35,19 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	
 	axisHighlight = [CALayer layer];
 	axisHighlight.hidden = YES;
-	axisHighlight.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, 1.000);
+	axisHighlight.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, .7);
 	[[self layer] addSublayer:axisHighlight];
 
 	axisHighlight2 = [CALayer layer];
 	axisHighlight2.hidden = YES;
-	axisHighlight2.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, 1.000);
+	axisHighlight2.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, .7);
 	[[self layer] addSublayer:axisHighlight2];
-		
-	collectingEvents = NO;
 	
+	tpLayer = [[TrackPadLayer alloc] initWithFrame:CGRectMake(self.frame.size.width-410, 10, 400, 300) touchData:touchData];
+	[[self layer] addSublayer:tpLayer];
+	
+	collectingEvents = NO;
+		
 	[NSCursor hide];
 }
 
@@ -72,6 +75,9 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			[touchData setObject:info forKey:t.identity];
 		}
 	}
+
+//	NSTouch *t = [touches anyObject];
+//	NSLog(@"(%lf, %lf) pt = (%lf, %lf) in", t.deviceSize.width, t.deviceSize.height, t.deviceSize.width/72, t.deviceSize.height/72);
 	
 	if (collectingEvents == NO) {
 		[self performSelector:@selector(handleTouches) withObject:nil afterDelay:0];
@@ -208,6 +214,9 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	previousCount = [touchData count];
 	
 	collectingEvents = NO;
+	
+	if (tpLayer.hidden == NO)
+		[tpLayer setNeedsDisplay];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
@@ -222,6 +231,15 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 
 - (BOOL)isOpaque {
 	return YES;
+}
+
+- (BOOL)acceptsFirstResponder {
+	return YES;
+}
+
+- (void)keyDown:(NSEvent *)theEvent {
+	if ([[theEvent characters] compare:@"o"] == NSOrderedSame)
+		tpLayer.hidden = !tpLayer.hidden;
 }
 
 @end
