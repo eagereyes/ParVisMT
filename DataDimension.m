@@ -17,6 +17,7 @@
 @synthesize numValues;
 @synthesize min;
 @synthesize max;
+@synthesize inverted;
 
 - (id)init {
 	if ((self = [super init])) {
@@ -24,6 +25,7 @@
 		values = malloc(NUM_PREALLOC * sizeof(float));
 		min = INFINITY;
 		max = -INFINITY;
+		inverted = NO;
 	}
 	return self;
 }

@@ -60,7 +60,7 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	CGContextDrawPath(context, kCGPathStroke);
 	
 	// axis labels
-	CGContextSetGrayFillColor(context, 0.5, 1);
+	CGContextSetGrayFillColor(context, 0, 1);
 	CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
 	x = HPADDING;
 	for (int i = 0; i < [dataSet.dimensions count]; i++) {
@@ -69,7 +69,7 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	}
 	
 	// min and max
-	CGContextSetGrayFillColor(context, 0, 1);
+	CGContextSetGrayFillColor(context, 0.5, 1);
 	CGContextSelectFont(context, "Helvetica", 14, kCGEncodingMacRoman);
 	char buffer[10];
 	x = HPADDING;
@@ -89,8 +89,8 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	}
 	
 	// arrows
-	CGContextSetGrayStrokeColor(context, 0.5, 1);
-	CGContextSetGrayFillColor(context, 0.5, 1);
+	CGContextSetGrayStrokeColor(context, 0, 1);
+	CGContextSetGrayFillColor(context, 0, 1);
 	x = HPADDING;
 	for (DataDimension *dim in dataSet.dimensions) {
 		CGContextMoveToPoint(context, x, self.frame.size.height-23);
