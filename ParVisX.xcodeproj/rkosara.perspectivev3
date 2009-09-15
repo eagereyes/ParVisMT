@@ -225,8 +225,8 @@
 	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
-		<integer>1280</integer>
-		<integer>1280</integer>
+		<integer>1276</integer>
+		<integer>1276</integer>
 	</array>
 	<key>Perspectives</key>
 	<array>
@@ -256,6 +256,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -302,7 +304,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
+									<integer>13</integer>
 									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -337,14 +339,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>4398ADFB1058006D00C025AA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ParCoordsView.m</string>
+								<string>ParCoordsBrushLayer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -352,27 +352,27 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4398ADFC1058006D00C025AA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ParCoordsView.m</string>
+										<string>ParCoordsBrushLayer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>433DD4CD105F2B8600EEFE5F</string>
+										<string>433DD5D3105F38ED00EEFE5F</string>
 										<key>history</key>
 										<array>
 											<string>43AFFC16105982C3004C5324</string>
-											<string>4338EB11105ADDB7006C9401</string>
 											<string>4338EB99105AE41D006C9401</string>
 											<string>4372FA61105B322500D08C47</string>
 											<string>4372FA62105B322500D08C47</string>
 											<string>4372FA64105B322500D08C47</string>
 											<string>43C48C81105C2C0500973416</string>
-											<string>4311F7AD105C43A4000F67C8</string>
 											<string>4311F7B9105C4522000F67C8</string>
 											<string>4311F823105C4A19000F67C8</string>
+											<string>433DD4D1105F2BF000EEFE5F</string>
+											<string>433DD54D105F316C00EEFE5F</string>
+											<string>433DD5D0105F38ED00EEFE5F</string>
+											<string>433DD5D1105F38ED00EEFE5F</string>
+											<string>433DD5D2105F38ED00EEFE5F</string>
 											<string>4311F831105C4AD9000F67C8</string>
-											<string>43DCB9AD105DA6F700D5DA7C</string>
-											<string>43DCB9B9105DE35D00D5DA7C</string>
-											<string>43DCB9BD105E808600D5DA7C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -412,8 +412,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1080, 94}}</string>
-										<key>RubberWindowFrame</key>
-										<string>4 55 1276 723 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -467,7 +465,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1083, 94}}</string>
+										<string>{{10, 27}, {1080, 94}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1276 723 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -672,7 +672,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>274672518.58389199</real>
+	<real>274675949.35101998</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -689,7 +689,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>433DD4CE105F2B8600EEFE5F</string>
+		<string>433DD5D4105F38ED00EEFE5F</string>
 		<string>433DD4C1105EFB0700EEFE5F</string>
 		<string>433DD4C2105EFB0700EEFE5F</string>
 		<string>/Users/rkosara/Documents/src/ParVisX/ParVisX.xcodeproj</string>

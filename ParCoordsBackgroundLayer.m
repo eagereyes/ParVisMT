@@ -9,8 +9,8 @@
 #import "ParCoordsBackgroundLayer.h"
 
 const int HPADDING = 20;
-const int TOPPADDING = 20;
-const int BOTTOMPADDING = 40;
+const int TOPPADDING = 45;
+const int BOTTOMPADDING = 45;
 
 char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Year"};
 
@@ -59,18 +59,60 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	CGContextSetGrayStrokeColor(context, 0.9, 1);
 	CGContextDrawPath(context, kCGPathStroke);
 	
+	// axis labels
 	CGContextSetGrayFillColor(context, 0.5, 1);
-	CGContextSelectFont(context, "Helvetica", 16, kCGEncodingMacRoman);
+	CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
 	x = HPADDING;
 	for (int i = 0; i < [dataSet.dimensions count]; i++) {
-		CGContextSetTextDrawingMode(context, kCGTextInvisible);
-		CGContextShowTextAtPoint(context, x, 10, labels[i], strlen(labels[i]));
-		CGPoint endPos = CGContextGetTextPosition(context);
-		CGContextSetTextDrawingMode(context, kCGTextFill);
-		CGContextShowTextAtPoint(context, x-(endPos.x-x)/2, 10, labels[i], strlen(labels[i]));
+		[self centerText:labels[i] atX:x atY:10 inContext:context];
+		x += stepX;
+	}
+	
+	// min and max
+	CGContextSetGrayFillColor(context, 0, 1);
+	CGContextSelectFont(context, "Helvetica", 14, kCGEncodingMacRoman);
+	char buffer[10];
+	x = HPADDING;
+	for (DataDimension *dim in dataSet.dimensions) {
+		if (dim.min == roundf(dim.min))
+			sprintf(buffer, "%d", (int)dim.min);
+		else
+			sprintf(buffer, "%.1f", dim.min);
+		[self centerText:buffer atX:x atY:30 inContext:context];
+		if (dim.max == roundf(dim.max))
+			sprintf(buffer, "%d", (int)dim.max);
+		else
+			sprintf(buffer, "%.1f", dim.max);
+		[self centerText:buffer atX:x atY:self.frame.size.height-40 inContext:context];
+
+		x += stepX;
+	}
+	
+	// arrows
+	CGContextSetGrayStrokeColor(context, 0.5, 1);
+	CGContextSetGrayFillColor(context, 0.5, 1);
+	x = HPADDING;
+	for (DataDimension *dim in dataSet.dimensions) {
+		CGContextMoveToPoint(context, x, self.frame.size.height-23);
+		CGContextAddLineToPoint(context, x, self.frame.size.height-5);
+		CGContextStrokePath(context);
+		
+		CGContextMoveToPoint(context, x, self.frame.size.height-5);
+		CGContextAddLineToPoint(context, x+5, self.frame.size.height-15);
+		CGContextAddLineToPoint(context, x-5, self.frame.size.height-15);
+		CGContextFillPath(context);
 		
 		x += stepX;
 	}
 }
+
+- (void)centerText:(char *)text atX:(float)x atY:(float)y inContext:(CGContextRef)context {
+	CGContextSetTextDrawingMode(context, kCGTextInvisible);
+	CGContextShowTextAtPoint(context, x, y, text, strlen(text));
+	CGPoint endPos = CGContextGetTextPosition(context);
+	CGContextSetTextDrawingMode(context, kCGTextFill);
+	CGContextShowTextAtPoint(context, x-(endPos.x-x)/2, y, text, strlen(text));
+}
+
 
 @end

@@ -22,5 +22,6 @@ extern const int BOTTOMPADDING;
 
 - (id)initWithDataSet:(DataSet *)d;
 
+- (void)centerText:(char *)text atX:(float)x atY:(float)y inContext:(CGContextRef)context;
 
 @end
