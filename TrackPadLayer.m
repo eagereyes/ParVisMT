@@ -26,7 +26,10 @@
 
 // Based on Apple's QuartzShapes example, http://developer.apple.com/mac/library/samplecode/QuartzShapes/
 - (void)drawInContext:(CGContextRef)context {
-	CGContextSetFillColorWithColor(context, CGColorCreateGenericRGB(0.798, 0.807, 0.817, 1.000));
+
+	// cover up text behind the lower right corner
+	CGContextSetGrayFillColor(context, 1, 1);
+	CGContextFillRect(context, CGRectMake(self.frame.size.width-20, 0, 20, self.frame.size.height));
 	
 	float edgeRadius = 5;
 	
@@ -34,7 +37,7 @@
     float fw, fh;
     
     // Calculate the width and height of the rectangle in the new coordinate system.
-    fw = CGRectGetWidth(self.bounds) / edgeRadius;
+    fw = (CGRectGetWidth(self.bounds)-10) / edgeRadius;
     fh = CGRectGetHeight(self.bounds) / edgeRadius;
     
 	CGMutablePathRef path = CGPathCreateMutable();
