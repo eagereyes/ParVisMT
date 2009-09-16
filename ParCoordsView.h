@@ -13,7 +13,8 @@
 #import "ParCoordsBackgroundLayer.h"
 #import "ParCoordsBrushLayer.h"
 #import "TouchInfo.h"
-#import "TrackPadLayer.h"
+#import "TrackPadBgLayer.h"
+#import "TrackPadFingersLayer.h"
 
 @interface ParCoordsView : NSView {
 
@@ -27,7 +28,9 @@
 
 	CALayer *axisHighlight2;
 	
-	TrackPadLayer *tpLayer;
+	TrackPadBgLayer *tpLayer;
+	
+	TrackPadFingersLayer *fingersLayer;
 
 	int activeAxis;
 	

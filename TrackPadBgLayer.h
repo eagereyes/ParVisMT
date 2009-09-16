@@ -8,15 +8,15 @@
 
 #import <QuartzCore/CALayer.h>
 
+#define FRAMEWIDTH 20
 
-@interface TrackPadLayer : CALayer {
 
-	NSDictionary *touches;
+@interface TrackPadBgLayer : CALayer {
 
 	int numDimensions;
 	
 }
 
-- (id)initWithFrame:(CGRect)frame touchData:(NSDictionary *)touchData numDimensions:(int)numDims;
+- (id)initWithFrame:(CGRect)frame numDimensions:(int)numDims;
 
 @end

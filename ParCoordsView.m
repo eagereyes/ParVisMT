@@ -43,9 +43,13 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	axisHighlight2.backgroundColor = CGColorCreateGenericRGB(0.000, 0.251, 0.502, .7);
 	[[self layer] addSublayer:axisHighlight2];
 	
-	tpLayer = [[TrackPadLayer alloc] initWithFrame:CGRectMake(self.frame.size.width-410, 10, 410, 300) touchData:touchData numDimensions:[data.dimensions count]];
+	tpLayer = [[TrackPadBgLayer alloc] initWithFrame:CGRectMake(self.frame.size.width-410, 10, 410, 300) numDimensions:[data.dimensions count]];
 	[[self layer] addSublayer:tpLayer];
 	tpLayer.hidden = YES;
+
+	fingersLayer = [[TrackPadFingersLayer alloc] initWithFrame:CGRectMake(self.frame.size.width-410, 10, 410, 300) touchData:touchData];
+	[[self layer] addSublayer:fingersLayer];
+	fingersLayer.hidden = YES;
 	
 	collectingEvents = NO;
 		
@@ -216,8 +220,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	
 	collectingEvents = NO;
 	
-	if (tpLayer.hidden == NO)
-		[tpLayer setNeedsDisplay];
+	if (fingersLayer.hidden == NO)
+		[fingersLayer setNeedsDisplay];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
@@ -239,8 +243,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-	if ([[theEvent characters] compare:@"o"] == NSOrderedSame)
+	if ([[theEvent characters] compare:@"o"] == NSOrderedSame) {
 		tpLayer.hidden = !tpLayer.hidden;
+		fingersLayer.hidden = !fingersLayer.hidden;
+	}
 }
 
 @end
