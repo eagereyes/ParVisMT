@@ -12,9 +12,11 @@
 @interface TrackPadLayer : CALayer {
 
 	NSDictionary *touches;
+
+	int numDimensions;
 	
 }
 
-- (id)initWithFrame:(CGRect)frame touchData:(NSDictionary *)touchData;
+- (id)initWithFrame:(CGRect)frame touchData:(NSDictionary *)touchData numDimensions:(int)numDims;
 
 @end
