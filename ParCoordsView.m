@@ -116,7 +116,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 		case 1:
 			{
 				TouchInfo *t = [touches objectAtIndex:0];
-				highlightedAxis = (int)(t.x*[data.dimensions count]);
+				highlightedAxis = [self x2axis:t.x];
 			}
 			break;
 
@@ -127,7 +127,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				if (activeAxis >= 0)
 					highlightedAxis = activeAxis;
 				else
-					highlightedAxis = (int)((t1.x+t2.x)/2*[data.dimensions count]);
+					highlightedAxis = [self x2axis:(t1.x+t2.x)/2];
 				float minY = MIN(t1.y, t2.y);
 				float maxY = MAX(t1.y, t2.y);
 				y = (int)(minY*height);
@@ -145,7 +145,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				if (activeAxis >= 0)
 					highlightedAxis = activeAxis;
 				else
-					highlightedAxis = (int)(t1.x*[data.dimensions count]);
+					highlightedAxis = [self x2axis:t1.x];
 				highlightedAxis2 = highlightedAxis+1;
 				[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
 				[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+t1.y*height Y2:BOTTOMPADDING+t2.y*height Y3:BOTTOMPADDING+t3.y*height];
@@ -162,13 +162,13 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				if (activeAxis >= 0)
 					highlightedAxis = activeAxis;
 				else
-					highlightedAxis = (int)((t1.x+t2.x)/2*[data.dimensions count]);
+					highlightedAxis = [self x2axis:(t1.x+t2.x)/2];
 				float minY1 = MIN(t1.y, t2.y);
 				float maxY1 = MAX(t1.y, t2.y);
 				y = (int)(minY1*height);
 				height = (int)(height*(maxY1-minY1));
 
-				highlightedAxis2 = (int)((t3.x+t4.x)/2*[data.dimensions count]);
+				highlightedAxis2 = [self x2axis:(t3.x+t4.x)/2 ];
 				if (highlightedAxis2 == highlightedAxis)
 					highlightedAxis2 = highlightedAxis+1;
 				float minY2 = MIN(t3.y, t4.y);
@@ -222,6 +222,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	
 	if (fingersLayer.hidden == NO)
 		[fingersLayer setNeedsDisplay];
+}
+
+- (int)x2axis:(float)x {
+	return (int)(x*([data.dimensions count]-1)+.5);
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {

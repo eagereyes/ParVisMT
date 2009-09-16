@@ -43,6 +43,8 @@
 	
 }
 
+- (int)x2axis:(float)x;
+
 - (void)collectAndProcessTouches:(NSTouchPhase)phase inEvent:(NSEvent *)event;
 
 - (void)handleTouches;
