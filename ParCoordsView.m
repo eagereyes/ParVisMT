@@ -20,6 +20,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	
 	activeAxis = -1;
 	previousCount = 0;
+	doubleTap = NO;
 	
 	touchData = [[NSMutableDictionary alloc] init];
 	
@@ -91,6 +92,20 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 }	
 
 - (void)touchesEndedWithEvent:(NSEvent *)event {
+
+	if ([touchData count] == 1) {
+		if (doubleTap) {
+			int axis = [self x2axis:((TouchInfo *)[[touchData allValues] objectAtIndex:0]).x];
+			[((DataDimension *)[data.dimensions objectAtIndex:axis]) invert];
+			[background setNeedsDisplay];
+			[brushLayer setNeedsDisplay];
+			doubleTap = NO;
+		} else {
+			doubleTap = YES;
+			[self performSelector:@selector(doubleTapCheck) withObject:nil afterDelay:0.2];
+		}
+	}
+	
 	NSSet *touches = [event touchesMatchingPhase:NSTouchPhaseEnded inView:self];
 	for (NSTouch *t in touches) {
 		[touchData removeObjectForKey:t.identity];
@@ -226,6 +241,10 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 
 - (int)x2axis:(float)x {
 	return (int)(x*([data.dimensions count]-1)+.5);
+}
+
+- (void)doubleTapCheck {
+	doubleTap = NO;
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {

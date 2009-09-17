@@ -96,12 +96,18 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 		CGContextMoveToPoint(context, x, self.frame.size.height-23);
 		CGContextAddLineToPoint(context, x, self.frame.size.height-5);
 		CGContextStrokePath(context);
-		
-		CGContextMoveToPoint(context, x, self.frame.size.height-5);
-		CGContextAddLineToPoint(context, x+5, self.frame.size.height-15);
-		CGContextAddLineToPoint(context, x-5, self.frame.size.height-15);
-		CGContextFillPath(context);
-		
+
+		if (dim.inverted == NO) {
+			CGContextMoveToPoint(context, x, self.frame.size.height-5);
+			CGContextAddLineToPoint(context, x+5, self.frame.size.height-15);
+			CGContextAddLineToPoint(context, x-5, self.frame.size.height-15);
+			CGContextFillPath(context);
+		} else {
+			CGContextMoveToPoint(context, x, self.frame.size.height-23);
+			CGContextAddLineToPoint(context, x+5, self.frame.size.height-13);
+			CGContextAddLineToPoint(context, x-5, self.frame.size.height-13);
+			CGContextFillPath(context);
+		}
 		x += stepX;
 	}
 }

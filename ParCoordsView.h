@@ -38,6 +38,8 @@
 
 	BOOL collectingEvents;
 	
+	BOOL doubleTap;
+	
 	// maps NSTouch IDs to TouchInfo objects
 	NSMutableDictionary *touchData;
 	

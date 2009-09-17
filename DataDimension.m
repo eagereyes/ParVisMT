@@ -43,4 +43,10 @@
 		values[i] = (values[i]-min)/(max-min);
 }
 
+- (void)invert {
+	inverted = !inverted;
+	for (int i = 0; i < numValues; i++)
+		values[i] = 1-values[i];
+}
+
 @end

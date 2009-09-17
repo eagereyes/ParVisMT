@@ -35,4 +35,6 @@
 
 - (void)normalize;
 
+- (void)invert;
+
 @end

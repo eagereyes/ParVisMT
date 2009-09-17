@@ -14,11 +14,19 @@
 	float x;
 	
 	float y;
+	
+	float oldX, oldY;
+	
 }
 
 @property (nonatomic, assign) float x;
 
 @property (nonatomic, assign) float y;
+
+@property (nonatomic, readonly) float oldX;
+
+@property (nonatomic, readonly) float oldY;
+
 
 - (id)initWithInitialX:(float)initialX Y:(float)initialY;
 

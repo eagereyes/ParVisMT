@@ -13,11 +13,13 @@
 
 @synthesize x;
 @synthesize y;
+@synthesize oldX;
+@synthesize oldY;
 
 - (id)initWithInitialX:(float)initialX Y:(float)initialY {
 	if ((self = [super init])) {
-		x = initialX;
-		y = initialY;
+		oldX = x = initialX;
+		oldY = y = initialY;
 	}
 	return self;
 }
@@ -31,5 +33,14 @@
 		return NSOrderedSame;
 }
 
+- (void)setX:(float)newX {
+	oldX = x;
+	x = newX;
+}
+
+- (void)setY:(float)newY {
+	oldY = y;
+	y = newY;
+}
 
 @end
