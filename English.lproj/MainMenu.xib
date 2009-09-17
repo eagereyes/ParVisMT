@@ -434,7 +434,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{0, 80}, {1276, 698}}</string>
+				<string key="NSWindowRect">{{0, 80}, {1280, 698}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">ParVis X</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -443,7 +443,7 @@
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">274</int>
-					<string key="NSFrameSize">{1276, 698}</string>
+					<string key="NSFrameSize">{1280, 698}</string>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
