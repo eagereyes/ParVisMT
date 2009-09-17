@@ -38,4 +38,9 @@
 		max = v;
 }
 
+- (void)normalize {
+	for (int i = 0; i < numValues; i++)
+		values[i] = (values[i]-min)/(max-min);
+}
+
 @end

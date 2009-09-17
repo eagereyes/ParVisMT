@@ -76,11 +76,11 @@
 		if (dataSet.brushed[i]) {
 			int x = HPADDING;
 			DataDimension *dim = [dataSet.dimensions objectAtIndex:0];
-			CGPathMoveToPoint(path, NULL, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+			CGPathMoveToPoint(path, NULL, x, BOTTOMPADDING+(int)(height*dim.values[i]));
 			for (int j = 1; j < [dataSet.dimensions count]; j++) {
 				x += stepX;
 				dim = [dataSet.dimensions objectAtIndex:j];
-				CGPathAddLineToPoint(path, NULL, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+				CGPathAddLineToPoint(path, NULL, x, BOTTOMPADDING+(int)(height*dim.values[i]));
 			}
 		}
 	}

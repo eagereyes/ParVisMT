@@ -49,11 +49,11 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	for (int i = 0; i < [dataSet numValues]; i++) {
 		x = HPADDING;
 		DataDimension *dim = [dataSet.dimensions objectAtIndex:0];
-		CGContextMoveToPoint(context, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+		CGContextMoveToPoint(context, x, BOTTOMPADDING+(int)(height*dim.values[i]));
 		for (int j = 1; j < [dataSet.dimensions count]; j++) {
 			x += stepX;
 			dim = [dataSet.dimensions objectAtIndex:j];
-			CGContextAddLineToPoint(context, x, BOTTOMPADDING+(int)(height*(dim.values[i]-dim.min)/(dim.max-dim.min)));
+			CGContextAddLineToPoint(context, x, BOTTOMPADDING+(int)(height*dim.values[i]));
 		}
 	}
 	CGContextSetGrayStrokeColor(context, 0.9, 1);

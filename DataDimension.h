@@ -33,5 +33,6 @@
 
 - (void)addValue:(float)v;
 
+- (void)normalize;
 
 @end

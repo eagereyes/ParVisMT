@@ -44,6 +44,9 @@ NSString *dbName = @"data.db";
 		} else {
 			NSLog(@"Could not open DB!");
 		}
+		
+		for (DataDimension *dim in dimensions)
+			[dim normalize];
 
 //		NSLog(@"%d rows", [self numValues]);
 	}
@@ -56,31 +59,23 @@ NSString *dbName = @"data.db";
 
 - (void)brushByDimension:(int)axis from:(float)normalizedMin to:(float)normalizedMax {
 	DataDimension *dim = [dimensions objectAtIndex:axis];
-	float min = normalizedMin*(dim.max-dim.min)+dim.min;
-	float max = normalizedMax*(dim.max-dim.min)+dim.min;
 	for (int i = 0; i < dim.numValues; i++)
-		brushed[i] = (dim.values[i] >= min) && (dim.values[i] <= max);
+		brushed[i] = (dim.values[i] >= normalizedMin) && (dim.values[i] <= normalizedMax);
 }
 
 - (void)brushByDimension1:(int)axis1 dimension2:(int)axis2 from1:(float)normalizedMin1 to1:(float)normalizedMax1 from2:(float)normalizedMin2 to2:(float)normalizedMax2 {
 	DataDimension *dim1 = [dimensions objectAtIndex:axis1];
 	DataDimension *dim2 = [dimensions objectAtIndex:axis2];
-	float min1 = normalizedMin1*(dim1.max-dim1.min)+dim1.min;
-	float max1 = normalizedMax1*(dim1.max-dim1.min)+dim1.min;
-	float min2 = normalizedMin2*(dim2.max-dim2.min)+dim2.min;
-	float max2 = normalizedMax2*(dim2.max-dim2.min)+dim2.min;
 	for (int i = 0; i < dim1.numValues; i++)
-		brushed[i] = (dim1.values[i] >= min1) && (dim1.values[i] <= max1)
-					 && (dim2.values[i] >= min2) && (dim2.values[i] <= max2);
+		brushed[i] = (dim1.values[i] >= normalizedMin1) && (dim1.values[i] <= normalizedMax1)
+					 && (dim2.values[i] >= normalizedMin2) && (dim2.values[i] <= normalizedMax2);
 }
 
 - (void)angularBrushDimension:(int)axis1 dimension2:(int)axis2 from:(float)minDifference to:(float)maxDifference {
 	DataDimension *dim1 = [dimensions objectAtIndex:axis1];
 	DataDimension *dim2 = [dimensions objectAtIndex:axis2];
-	float range1 = dim1.max-dim1.min;
-	float range2 = dim2.max-dim2.min;
 	for (int i = 0; i < dim1.numValues; i++) {
-		float difference = (dim1.values[i]-dim1.min)/range1-(dim2.values[i]-dim2.min)/range2;
+		float difference = dim1.values[i]-dim2.values[i];
 		brushed[i] = (difference >= minDifference) && (difference <= maxDifference);
 	}
 }
