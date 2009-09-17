@@ -25,6 +25,8 @@ extern const int BOTTOMPADDING;
 	CGFloat leftX;
 	
 	CGFloat width;
+	
+	int movingAxisX;
 }
 
 - (id)initWithDataSet:(DataSet *)d;
@@ -32,6 +34,8 @@ extern const int BOTTOMPADDING;
 - (void)setPointsAtX:(int)x width:(int)w Y1:(int)y1 Y2:(int)y2 Y3:(int)y3 Y4:(int)y4;
 
 - (void)setPointsAtX:(int)x width:(int)w Y1:(int)y1 Y2:(int)y2 Y3:(int)y3;
+
+- (void)setRearrangeAxisFrom:(int)fromX to:(int)newX;
 
 - (void)clearBrushShape;
 

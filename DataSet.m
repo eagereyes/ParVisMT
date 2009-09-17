@@ -15,6 +15,8 @@ NSString *dbName = @"data.db";
 
 #define NUM_DIMENSIONS 6
 
+char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Year"};
+
 @implementation DataSet
 
 @synthesize dimensions;
@@ -25,7 +27,7 @@ NSString *dbName = @"data.db";
 		dimensions = [NSMutableArray arrayWithCapacity:NUM_DIMENSIONS];
 		[dimensions retain];
 		for (int i = 0; i < NUM_DIMENSIONS; i++)
-			[dimensions addObject:[[DataDimension alloc] init]];
+			[dimensions addObject:[[DataDimension alloc] initWithLabel:labels[i]]];
 
 		brushed = calloc(500, sizeof(BOOL));
 		[self resetBrush];

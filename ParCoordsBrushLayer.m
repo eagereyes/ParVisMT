@@ -14,6 +14,7 @@
 	if ((self = [super init])) {
 		dataSet = d;
 		numPoints = 0;
+		movingAxisX = -1;
 		coords = malloc(4 * sizeof(int));
 		self.backgroundColor = CGColorGetConstantColor(kCGColorClear);
 		[self setNeedsDisplay];
@@ -25,6 +26,7 @@
 
 - (void)clearBrushShape {
 	numPoints = 0;
+	movingAxisX = -1;
 }
 
 - (void)setPointsAtX:(int)x width:(int)w Y1:(int)y1 Y2:(int)y2 Y3:(int)y3 Y4:(int)y4 {
@@ -46,6 +48,12 @@
 	width = w;
 }
 
+- (void)setRearrangeAxisFrom:(int)fromX to:(int)newX {
+	numPoints = 3;
+	movingAxisX = fromX;
+	leftX = newX;
+}
+
 - (void)drawInContext:(CGContextRef)context {
 	[super drawInContext:context];
 
@@ -57,13 +65,18 @@
 		CGContextAddLineToPoint(context, leftX+width, coords[2]);
 		CGContextAddLineToPoint(context, leftX+width, coords[3]);
 	} else if (numPoints == 3) {
-		int topY = MAX(coords[1], coords[2]);
-		int bottomY = MIN(coords[1], coords[2]);
-		double startAngle = atan((double)(topY-coords[0])/width);
-		double endAngle = atan((double)(bottomY-coords[0])/width);
-		CGContextMoveToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
-		CGContextAddArc(context, leftX+width*.1, BOTTOMPADDING+height/2, width*.8, startAngle, endAngle, 1);
-		CGContextAddLineToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
+		if (movingAxisX < 0) {
+			int topY = MAX(coords[1], coords[2]);
+			int bottomY = MIN(coords[1], coords[2]);
+			double startAngle = atan((double)(topY-coords[0])/width);
+			double endAngle = atan((double)(bottomY-coords[0])/width);
+			CGContextMoveToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
+			CGContextAddArc(context, leftX+width*.1, BOTTOMPADDING+height/2, width*.8, startAngle, endAngle, 1);
+			CGContextAddLineToPoint(context, leftX+width*.1, BOTTOMPADDING+height/2);
+		} else {
+			CGContextMoveToPoint(context, movingAxisX, BOTTOMPADDING+height/2);
+			CGContextAddLineToPoint(context, leftX, BOTTOMPADDING+height/2);
+		}
 	}
 	
 	CGContextSetRGBFillColor(context, 0, 0.251, 0.502, .5);

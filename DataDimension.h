@@ -18,6 +18,8 @@
 	float min, max;
 	
 	BOOL inverted;
+	
+	char *name;
 }
 
 @property (nonatomic, readonly) int numValues;
@@ -30,6 +32,9 @@
 
 @property (nonatomic, assign) BOOL inverted;
 
+@property (nonatomic, readonly) char *name;
+
+- (id)initWithLabel:(char *)n;
 
 - (void)addValue:(float)v;
 

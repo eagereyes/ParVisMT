@@ -16,7 +16,7 @@
 	BOOL *brushed;
 }
 
-@property (nonatomic, readonly) NSArray *dimensions;
+@property (nonatomic, readonly) NSMutableArray *dimensions;
 
 @property (nonatomic, readonly) BOOL *brushed;
 

@@ -302,7 +302,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
+									<integer>9</integer>
 									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -344,7 +344,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>4398ADFB1058006D00C025AA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ParCoordsBackgroundLayer.m</string>
+								<string>ParCoordsView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -352,30 +352,31 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>4398ADFC1058006D00C025AA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ParCoordsBackgroundLayer.m</string>
+										<string>ParCoordsView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>437394041061C44900A87C62</string>
+										<string>437394871061D5D200A87C62</string>
 										<key>history</key>
 										<array>
 											<string>43AFFC16105982C3004C5324</string>
-											<string>4338EB99105AE41D006C9401</string>
 											<string>4373938F106195FB00A87C62</string>
-											<string>437393BF1061B7B500A87C62</string>
 											<string>437393CA1061B87D00A87C62</string>
 											<string>437393CB1061B87D00A87C62</string>
-											<string>437393CE1061B87D00A87C62</string>
-											<string>437393D51061BDDF00A87C62</string>
 											<string>437393DD1061C0FD00A87C62</string>
 											<string>437393DE1061C0FD00A87C62</string>
-											<string>437393DF1061C0FD00A87C62</string>
 											<string>437393E61061C2B700A87C62</string>
 											<string>437393E71061C2B700A87C62</string>
-											<string>437393E81061C2B700A87C62</string>
-											<string>437393FA1061C40400A87C62</string>
-											<string>437393FB1061C40400A87C62</string>
-											<string>437393E51061C2B700A87C62</string>
+											<string>437394161061CBC500A87C62</string>
+											<string>437394331061CDA200A87C62</string>
+											<string>437394341061CDA200A87C62</string>
+											<string>437394351061CDA200A87C62</string>
+											<string>437394401061CE4C00A87C62</string>
+											<string>437394481061D12900A87C62</string>
+											<string>437394511061D1A900A87C62</string>
+											<string>437394581061D21E00A87C62</string>
+											<string>437394621061D36600A87C62</string>
+											<string>437394771061D4BE00A87C62</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -675,7 +676,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>274842697.03850001</real>
+	<real>274847186.78694302</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -692,7 +693,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>437394051061C44900A87C62</string>
+		<string>437394881061D5D200A87C62</string>
 		<string>43739370106180E000A87C62</string>
 		<string>4373931A10607CAD00A87C62</string>
 		<string>4373931B10607CAD00A87C62</string>

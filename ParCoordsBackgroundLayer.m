@@ -12,8 +12,6 @@ const int HPADDING = 20;
 const int TOPPADDING = 45;
 const int BOTTOMPADDING = 45;
 
-char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Year"};
-
 @implementation ParCoordsBackgroundLayer
 
 - (id)initWithDataSet:(DataSet *)d {
@@ -63,8 +61,8 @@ char *labels[] = {"MPG", "Cylinders", "Horsepower", "Weight", "Acceleration", "Y
 	CGContextSetGrayFillColor(context, 0, 1);
 	CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
 	x = HPADDING;
-	for (int i = 0; i < [dataSet.dimensions count]; i++) {
-		[self centerText:labels[i] atX:x atY:10 inContext:context];
+	for (DataDimension *dim in dataSet.dimensions) {
+		[self centerText:dim.name atX:x atY:10 inContext:context];
 		x += stepX;
 	}
 	

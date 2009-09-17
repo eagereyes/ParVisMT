@@ -21,6 +21,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	activeAxis = -1;
 	previousCount = 0;
 	doubleTap = NO;
+	movingAxis = -1;
 	
 	touchData = [[NSMutableDictionary alloc] init];
 	
@@ -104,6 +105,17 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			doubleTap = YES;
 			[self performSelector:@selector(doubleTapCheck) withObject:nil afterDelay:0.2];
 		}
+	} else if ([touchData count] == 3) {
+		if (movingAxis >= 0) {
+			DataDimension *dim = [data.dimensions objectAtIndex:movingAxis];
+			[data.dimensions removeObjectAtIndex:movingAxis];
+			int newAxis = [self x2axis:((TouchInfo *)[[touchData allValues] objectAtIndex:0]).x];
+			[data.dimensions insertObject:dim atIndex:newAxis];
+			[background setNeedsDisplay];
+			[brushLayer setNeedsDisplay];
+			axisHighlight.hidden = YES;
+			movingAxis = -1;
+		}
 	}
 	
 	NSSet *touches = [event touchesMatchingPhase:NSTouchPhaseEnded inView:self];
@@ -157,14 +169,32 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 				TouchInfo *t1 = [touches objectAtIndex:0];
 				TouchInfo *t2 = [touches objectAtIndex:1];
 				TouchInfo *t3 = [touches objectAtIndex:2];
-				if (activeAxis >= 0)
-					highlightedAxis = activeAxis;
-				else
-					highlightedAxis = [self x2axis:t1.x];
-				highlightedAxis2 = highlightedAxis+1;
-				[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
-				[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+t1.y*height Y2:BOTTOMPADDING+t2.y*height Y3:BOTTOMPADDING+t3.y*height];
-				[brushLayer setNeedsDisplay];
+				int axis1 = [self x2axis:t1.x];
+				int axis2 = [self x2axis:t2.x];
+				int axis3 = [self x2axis:t3.x];
+				if (movingAxis < 0) {
+					if (axis1 == axis2 && axis2 == axis3) {
+						movingAxis = axis1;
+						[data resetBrush];
+						[brushLayer setNeedsDisplay];
+						axisHighlight.frame = CGRectMake(HPADDING+t1.x*([self frame].size.width-2*HPADDING), BOTTOMPADDING+y, 3, height);
+						axisHighlight.hidden = NO;
+					} else {
+						if (activeAxis >= 0)
+							highlightedAxis = activeAxis;
+						else
+							highlightedAxis = [self x2axis:t1.x];
+						highlightedAxis2 = highlightedAxis+1;
+						[data angularBrushDimension:highlightedAxis dimension2:highlightedAxis+1 from:t1.y-MAX(t2.y, t3.y) to:t1.y-MIN(t2.y, t3.y)];
+						[brushLayer setPointsAtX:HPADDING+highlightedAxis*stepX width:stepX Y1:BOTTOMPADDING+t1.y*height Y2:BOTTOMPADDING+t2.y*height Y3:BOTTOMPADDING+t3.y*height];
+						[brushLayer setNeedsDisplay];
+					}
+				} else {
+					axisHighlight.frame = CGRectMake(HPADDING+t1.x*([self frame].size.width-2*HPADDING), BOTTOMPADDING+y, 3, height);
+					axisHighlight.hidden = NO;
+//					[brushLayer setRearrangeAxisFrom:HPADDING+movingAxis*stepX to:HPADDING+t1.x*([self frame].size.width-2*HPADDING)];
+//					[brushLayer setNeedsDisplay];
+				}
 			}
 			break;
 			
@@ -225,7 +255,7 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 			[CATransaction commit];
 		
 		axisHighlight.hidden = NO;
-	} else {
+	} else if (movingAxis < 0) {
 		axisHighlight.hidden = YES;
 		axisHighlight2.hidden = YES;
 	}

@@ -18,14 +18,16 @@
 @synthesize min;
 @synthesize max;
 @synthesize inverted;
+@synthesize name;
 
-- (id)init {
+- (id)initWithLabel:(char *)n {
 	if ((self = [super init])) {
 		numValues = 0;
 		values = malloc(NUM_PREALLOC * sizeof(float));
 		min = INFINITY;
 		max = -INFINITY;
 		inverted = NO;
+		name = n;
 	}
 	return self;
 }

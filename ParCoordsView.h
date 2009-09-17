@@ -34,6 +34,8 @@
 
 	int activeAxis;
 	
+	int movingAxis;
+	
 	int previousCount;
 
 	BOOL collectingEvents;
