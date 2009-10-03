@@ -434,7 +434,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{0, 80}, {1280, 698}}</string>
+				<string key="NSWindowRect">{{0, 0}, {1280, 760}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">ParVis X</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -443,7 +443,7 @@
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">274</int>
-					<string key="NSFrameSize">{1280, 698}</string>
+					<string key="NSFrameSize">{1280, 760}</string>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 					<int key="NSViewLayerContentsRedrawPolicy">2</int>
 				</object>
@@ -1711,7 +1711,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../ParVisX.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../ParVis X.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

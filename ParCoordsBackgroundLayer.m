@@ -72,15 +72,17 @@ const int BOTTOMPADDING = 45;
 	char buffer[10];
 	x = HPADDING;
 	for (DataDimension *dim in dataSet.dimensions) {
-		if (dim.min == roundf(dim.min))
-			sprintf(buffer, "%d", (int)dim.min);
+		float min = dim.inverted?dim.max:dim.min;
+		if (min == roundf(min))
+			sprintf(buffer, "%d", (int)min);
 		else
-			sprintf(buffer, "%.1f", dim.min);
+			sprintf(buffer, "%.1f", min);
 		[self centerText:buffer atX:x atY:30 inContext:context];
-		if (dim.max == roundf(dim.max))
-			sprintf(buffer, "%d", (int)dim.max);
+		float max = dim.inverted?dim.min:dim.max;
+		if (max == roundf(max))
+			sprintf(buffer, "%d", (int)max);
 		else
-			sprintf(buffer, "%.1f", dim.max);
+			sprintf(buffer, "%.1f", max);
 		[self centerText:buffer atX:x atY:self.frame.size.height-40 inContext:context];
 
 		x += stepX;
