@@ -42,9 +42,12 @@
 	
 	BOOL doubleTap;
 	
+	BOOL fullScreen;
+	
 	// maps NSTouch IDs to TouchInfo objects
 	NSMutableDictionary *touchData;
 	
+	IBOutlet NSWindow *mainWindow;
 }
 
 - (int)x2axis:(float)x;
@@ -52,5 +55,8 @@
 - (void)collectAndProcessTouches:(NSTouchPhase)phase inEvent:(NSEvent *)event;
 
 - (void)handleTouches;
+
+- (void)exitFullScreenMode;
+
 
 @end

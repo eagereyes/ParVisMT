@@ -10,6 +10,8 @@
 
 const CGFloat highlightColor[] = {0, 0, .8, 1};
 
+const unsigned short kEscKeyCode = 53;
+
 @implementation ParCoordsView
 
 - (void)awakeFromNib {
@@ -22,6 +24,8 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	previousCount = 0;
 	doubleTap = NO;
 	movingAxis = -1;
+	
+	fullScreen = NO;
 	
 	touchData = [[NSMutableDictionary alloc] init];
 	
@@ -299,7 +303,21 @@ const CGFloat highlightColor[] = {0, 0, .8, 1};
 	if ([[theEvent characters] compare:@"o"] == NSOrderedSame) {
 		tpLayer.hidden = !tpLayer.hidden;
 		fingersLayer.hidden = !fingersLayer.hidden;
+	} else if ([[theEvent characters] compare:@"f"] == NSOrderedSame) {
+		if (!fullScreen) {
+			[self enterFullScreenMode:[mainWindow screen] withOptions:nil];
+			fullScreen = YES;
+		} else
+			[self exitFullScreenMode];
+	} else if ([theEvent keyCode] == kEscKeyCode && fullScreen) {
+		[self exitFullScreenMode];
 	}
+}
+
+- (void)exitFullScreenMode {
+	[self exitFullScreenModeWithOptions:nil];
+	[mainWindow makeFirstResponder:self];
+	fullScreen = NO;
 }
 
 @end
