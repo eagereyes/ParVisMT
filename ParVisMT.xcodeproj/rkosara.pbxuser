@@ -10,15 +10,22 @@
 	256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
-			sepNavSelRange = "{309, 0}";
-			sepNavVisRange = "{0, 315}";
+			sepNavSelRange = "{15, 0}";
+			sepNavVisRange = "{0, 1394}";
 		};
 	};
 	256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */ = {
 		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {967, 507}}";
+			sepNavSelRange = "{1224, 0}";
+			sepNavVisRange = "{0, 1447}";
+		};
+	};
+	256AC3F00F4B6AF500CF3369 /* ParVisMT_Prefix.pch */ = {
+		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
-			sepNavSelRange = "{307, 0}";
-			sepNavVisRange = "{0, 368}";
+			sepNavSelRange = "{82, 0}";
+			sepNavVisRange = "{0, 147}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -94,29 +101,30 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 301244071;
-			PBXWorkspaceStateSaveDate = 301244071;
+			PBXPerProjectTemplateStateSaveDate = 301255655;
+			PBXWorkspaceStateSaveDate = 301255655;
 		};
 		perUserProjectItems = {
-			43355A5211F49F6600E63B87 /* PBXTextBookmark */ = 43355A5211F49F6600E63B87 /* PBXTextBookmark */;
-			43355A5311F49F6600E63B87 /* PBXTextBookmark */ = 43355A5311F49F6600E63B87 /* PBXTextBookmark */;
-			43355A6311F4A6A800E63B87 /* PBXTextBookmark */ = 43355A6311F4A6A800E63B87 /* PBXTextBookmark */;
-			43355A6411F4A6A800E63B87 /* PBXTextBookmark */ = 43355A6411F4A6A800E63B87 /* PBXTextBookmark */;
-			43355A6511F4A6A800E63B87 /* PBXTextBookmark */ = 43355A6511F4A6A800E63B87 /* PBXTextBookmark */;
-			43355A6611F4A6A800E63B87 /* PBXTextBookmark */ = 43355A6611F4A6A800E63B87 /* PBXTextBookmark */;
-			43355A6711F4A6A800E63B87 /* PlistBookmark */ = 43355A6711F4A6A800E63B87 /* PlistBookmark */;
-			43355A6811F4A6A800E63B87 /* PBXBookmark */ = 43355A6811F4A6A800E63B87 /* PBXBookmark */;
-			43355A6911F4A6A800E63B87 /* PBXBookmark */ = 43355A6911F4A6A800E63B87 /* PBXBookmark */;
-			43355A8F11F4C58A00E63B87 /* PlistBookmark */ = 43355A8F11F4C58A00E63B87 /* PlistBookmark */;
-			43355A9011F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9011F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9111F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9111F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9211F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9211F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9311F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9311F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9411F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9411F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9511F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9511F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9611F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9611F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9711F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9711F4C58A00E63B87 /* PBXTextBookmark */;
-			43355A9811F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9811F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A5211F49F6600E63B87 = 43355A5211F49F6600E63B87 /* PBXTextBookmark */;
+			43355A5311F49F6600E63B87 = 43355A5311F49F6600E63B87 /* PBXTextBookmark */;
+			43355A6311F4A6A800E63B87 = 43355A6311F4A6A800E63B87 /* PBXTextBookmark */;
+			43355A6411F4A6A800E63B87 = 43355A6411F4A6A800E63B87 /* PBXTextBookmark */;
+			43355A6511F4A6A800E63B87 = 43355A6511F4A6A800E63B87 /* PBXTextBookmark */;
+			43355A6611F4A6A800E63B87 = 43355A6611F4A6A800E63B87 /* PBXTextBookmark */;
+			43355A6711F4A6A800E63B87 = 43355A6711F4A6A800E63B87 /* PlistBookmark */;
+			43355A6811F4A6A800E63B87 = 43355A6811F4A6A800E63B87 /* PBXBookmark */;
+			43355A6911F4A6A800E63B87 = 43355A6911F4A6A800E63B87 /* PBXBookmark */;
+			43355A8F11F4C58A00E63B87 = 43355A8F11F4C58A00E63B87 /* PlistBookmark */;
+			43355A9011F4C58A00E63B87 = 43355A9011F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9111F4C58A00E63B87 = 43355A9111F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9211F4C58A00E63B87 = 43355A9211F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9311F4C58A00E63B87 = 43355A9311F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9411F4C58A00E63B87 = 43355A9411F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9511F4C58A00E63B87 = 43355A9511F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9611F4C58A00E63B87 = 43355A9611F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9711F4C58A00E63B87 = 43355A9711F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9811F4C58A00E63B87 = 43355A9811F4C58A00E63B87 /* PBXTextBookmark */;
+			43355AC611F4CBE900E63B87 /* PBXTextBookmark */ = 43355AC611F4CBE900E63B87 /* PBXTextBookmark */;
 			4373938F106195FB00A87C62 = 4373938F106195FB00A87C62 /* PBXTextBookmark */;
 			437393CA1061B87D00A87C62 = 437393CA1061B87D00A87C62 /* PBXTextBookmark */;
 			437393CB1061B87D00A87C62 = 437393CB1061B87D00A87C62 /* PBXTextBookmark */;
@@ -164,7 +172,7 @@
 		fRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */;
 		name = "ParCoordsBackgroundLayer.m: 82";
 		rLen = 0;
-		rLoc = 2507;
+		rLoc = 3585;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 644;
@@ -174,7 +182,7 @@
 		fRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */;
 		name = "ParCoordsBackgroundLayer.m: 82";
 		rLen = 0;
-		rLoc = 2507;
+		rLoc = 3585;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 644;
@@ -191,7 +199,7 @@
 		fRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */;
 		name = "ParCoordsBackgroundLayer.m: 82";
 		rLen = 0;
-		rLoc = 2507;
+		rLoc = 3585;
 		rType = 0;
 		vrLen = 1375;
 		vrLoc = 644;
@@ -201,7 +209,7 @@
 		fRef = 4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */;
 		name = "TrackPadFingersLayer.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 1405;
 		rType = 0;
 		vrLen = 330;
 		vrLoc = 0;
@@ -211,7 +219,7 @@
 		fRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */;
 		name = "TrackPadFingersLayer.m: 29";
 		rLen = 0;
-		rLoc = 859;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -235,7 +243,7 @@
 		);
 		name = "/Users/rkosara/Documents/src/multitouchvis/ParVis X-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	43355A6811F4A6A800E63B87 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -254,14 +262,14 @@
 		);
 		name = "/Users/rkosara/Documents/src/multitouchvis/ParVis X-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	43355A9011F4C58A00E63B87 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */;
 		name = "TrackPadFingersLayer.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 1405;
 		rType = 0;
 		vrLen = 330;
 		vrLoc = 0;
@@ -271,7 +279,7 @@
 		fRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */;
 		name = "TrackPadFingersLayer.m: 29";
 		rLen = 0;
-		rLoc = 859;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -281,7 +289,7 @@
 		fRef = 43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */;
 		name = "TrackPadBgLayer.m: 11";
 		rLen = 0;
-		rLoc = 188;
+		rLoc = 1270;
 		rType = 0;
 		vrLen = 1113;
 		vrLoc = 134;
@@ -291,7 +299,7 @@
 		fRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */;
 		name = "ParVisXAppDelegate.m: 16";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 1386;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 0;
@@ -301,7 +309,7 @@
 		fRef = 256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */;
 		name = "ParVisXAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 309;
+		rLoc = 1388;
 		rType = 0;
 		vrLen = 315;
 		vrLoc = 0;
@@ -311,7 +319,7 @@
 		fRef = 43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */;
 		name = "ParCoordsBackgroundLayer.h: 25";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 1564;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -321,7 +329,7 @@
 		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
 		name = "ParCoordsView.h: 47";
 		rLen = 0;
-		rLoc = 796;
+		rLoc = 1873;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 338;
@@ -331,7 +339,7 @@
 		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
 		name = "ParCoordsView.m: 313";
 		rLen = 0;
-		rLoc = 9615;
+		rLoc = 10692;
 		rType = 0;
 		vrLen = 862;
 		vrLoc = 8866;
@@ -341,23 +349,33 @@
 		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
 		name = "ParCoordsView.m: 62";
 		rLen = 0;
-		rLoc = 1781;
+		rLoc = 2858;
 		rType = 0;
 		vrLen = 860;
 		vrLoc = 0;
 	};
+	43355AC611F4CBE900E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
+		name = "ParCoordsView.m: 81";
+		rLen = 0;
+		rLoc = 2858;
+		rType = 0;
+		vrLen = 1424;
+		vrLoc = 0;
+	};
 	4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
-			sepNavSelRange = "{324, 0}";
-			sepNavVisRange = "{0, 330}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 520}}";
+			sepNavSelRange = "{1226, 0}";
+			sepNavVisRange = "{0, 1406}";
 		};
 	};
 	4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {971, 483}}";
-			sepNavSelRange = "{859, 0}";
-			sepNavVisRange = "{0, 899}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 728}}";
+			sepNavSelRange = "{1226, 0}";
+			sepNavVisRange = "{0, 1579}";
 		};
 	};
 	4373938F106195FB00A87C62 /* PBXTextBookmark */ = {
@@ -365,7 +383,7 @@
 		fRef = 43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */;
 		name = "ParCoordsBackgroundLayer.h: 25";
 		rLen = 0;
-		rLoc = 486;
+		rLoc = 1564;
 		rType = 0;
 		vrLen = 526;
 		vrLoc = 0;
@@ -375,7 +393,7 @@
 		fRef = 43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */;
 		name = "TrackPadBgLayer.m: 11";
 		rLen = 0;
-		rLoc = 188;
+		rLoc = 1270;
 		rType = 0;
 		vrLen = 1269;
 		vrLoc = 134;
@@ -385,7 +403,7 @@
 		fRef = 43DCC949105BF61700C8C455 /* TrackPadBgLayer.h */;
 		name = "TrackPadBgLayer.h: 21";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 1403;
 		rType = 0;
 		vrLen = 327;
 		vrLoc = 0;
@@ -395,7 +413,7 @@
 		fRef = 43819FAF1058829400C92BFF /* TouchInfo.m */;
 		name = "TouchInfo.m: 22";
 		rLen = 0;
-		rLoc = 376;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 571;
 		vrLoc = 133;
@@ -405,7 +423,7 @@
 		fRef = 43819FAE1058829400C92BFF /* TouchInfo.h */;
 		name = "TouchInfo.h: 27";
 		rLen = 0;
-		rLoc = 370;
+		rLoc = 1448;
 		rType = 0;
 		vrLen = 533;
 		vrLoc = 0;
@@ -415,7 +433,7 @@
 		fRef = 4398AE2B10581E1900C025AA /* DataSet.h */;
 		name = "DataSet.h: 19";
 		rLen = 0;
-		rLoc = 285;
+		rLoc = 1363;
 		rType = 0;
 		vrLen = 769;
 		vrLoc = 0;
@@ -425,7 +443,7 @@
 		fRef = 4398AE2C10581E1900C025AA /* DataSet.m */;
 		name = "DataSet.m: 30";
 		rLen = 0;
-		rLoc = 690;
+		rLoc = 1768;
 		rType = 0;
 		vrLen = 1175;
 		vrLoc = 155;
@@ -435,7 +453,7 @@
 		fRef = 4398AE5E1058217700C025AA /* DataDimension.h */;
 		name = "DataDimension.h: 37";
 		rLen = 0;
-		rLoc = 589;
+		rLoc = 1667;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 78;
@@ -445,7 +463,7 @@
 		fRef = 4398AE5F1058217700C025AA /* DataDimension.m */;
 		name = "DataDimension.m: 23";
 		rLen = 0;
-		rLoc = 379;
+		rLoc = 1457;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 210;
@@ -455,51 +473,51 @@
 		fRef = 4381A01B1058918900C92BFF /* ParCoordsBrushLayer.h */;
 		name = "ParCoordsBrushLayer.h: 38";
 		rLen = 0;
-		rLoc = 722;
+		rLoc = 1800;
 		rType = 0;
 		vrLen = 747;
 		vrLoc = 3;
 	};
 	43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
-			sepNavSelRange = "{486, 0}";
-			sepNavVisRange = "{0, 526}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 637}}";
+			sepNavSelRange = "{1229, 0}";
+			sepNavVisRange = "{0, 1465}";
 		};
 	};
 	43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 1664}}";
-			sepNavSelRange = "{2507, 0}";
-			sepNavVisRange = "{644, 1375}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1950}}";
+			sepNavSelRange = "{1229, 0}";
+			sepNavVisRange = "{0, 1475}";
 		};
 	};
 	43819FAE1058829400C92BFF /* TouchInfo.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 520}}";
-			sepNavSelRange = "{370, 0}";
-			sepNavVisRange = "{0, 533}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 754}}";
+			sepNavSelRange = "{1214, 0}";
+			sepNavVisRange = "{0, 1321}";
 		};
 	};
 	43819FAF1058829400C92BFF /* TouchInfo.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 611}}";
-			sepNavSelRange = "{376, 0}";
-			sepNavVisRange = "{133, 571}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 832}}";
+			sepNavSelRange = "{1214, 0}";
+			sepNavVisRange = "{0, 1392}";
 		};
 	};
 	4381A01B1058918900C92BFF /* ParCoordsBrushLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 559}}";
-			sepNavSelRange = "{722, 0}";
-			sepNavVisRange = "{3, 747}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 806}}";
+			sepNavSelRange = "{1224, 0}";
+			sepNavVisRange = "{0, 1455}";
 		};
 	};
 	4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 1404}}";
-			sepNavSelRange = "{2194, 0}";
-			sepNavVisRange = "{1139, 1532}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1716}}";
+			sepNavSelRange = "{1224, 0}";
+			sepNavVisRange = "{0, 1515}";
 		};
 	};
 	4398ADE01057FF9200C025AA /* ParVisMT */ = {
@@ -550,60 +568,74 @@
 	};
 	4398ADEB1057FFD500C025AA /* FMDatabase.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1015, 1365}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1365}}";
 			sepNavSelRange = "{834, 16}";
-			sepNavVisRange = "{332, 957}";
+			sepNavVisRange = "{0, 876}";
 		};
 	};
 	4398ADEC1057FFD500C025AA /* FMDatabase.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 9035}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 8827}}";
 			sepNavSelRange = "{10574, 0}";
-			sepNavVisRange = "{9953, 1194}";
+			sepNavVisRange = "{0, 753}";
+		};
+	};
+	4398ADED1057FFD500C025AA /* FMResultSet.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1105}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 841}";
+		};
+	};
+	4398ADEE1057FFD500C025AA /* FMResultSet.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {967, 4446}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 763}";
 		};
 	};
 	4398ADF11057FFE200C025AA /* ParCoordsView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 858}}";
-			sepNavSelRange = "{796, 0}";
-			sepNavVisRange = "{338, 572}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1014}}";
+			sepNavSelRange = "{1218, 0}";
+			sepNavVisRange = "{0, 1513}";
 		};
 	};
 	4398ADF21057FFE200C025AA /* ParCoordsView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 4303}}";
-			sepNavSelRange = "{1781, 0}";
-			sepNavVisRange = "{0, 860}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 4537}}";
+			sepNavSelRange = "{2858, 0}";
+			sepNavVisRange = "{0, 1424}";
 			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
 		};
 	};
 	4398AE2B10581E1900C025AA /* DataSet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1181, 520}}";
-			sepNavSelRange = "{285, 0}";
-			sepNavVisRange = "{0, 769}";
+			sepNavIntBoundsRect = "{{0, 0}, {1181, 676}}";
+			sepNavSelRange = "{1211, 0}";
+			sepNavVisRange = "{0, 1382}";
 		};
 	};
 	4398AE2C10581E1900C025AA /* DataSet.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 1274}}";
-			sepNavSelRange = "{690, 0}";
-			sepNavVisRange = "{155, 1175}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1430}}";
+			sepNavSelRange = "{1211, 0}";
+			sepNavVisRange = "{0, 1461}";
 			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
 		};
 	};
 	4398AE5E1058217700C025AA /* DataDimension.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 598}}";
-			sepNavSelRange = "{589, 0}";
-			sepNavVisRange = "{78, 594}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 754}}";
+			sepNavSelRange = "{1217, 0}";
+			sepNavVisRange = "{0, 1339}";
 		};
 	};
 	4398AE5F1058217700C025AA /* DataDimension.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 715}}";
-			sepNavSelRange = "{379, 0}";
-			sepNavVisRange = "{210, 678}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 975}}";
+			sepNavSelRange = "{79, 1139}";
+			sepNavVisRange = "{0, 1397}";
 			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
 		};
 	};
@@ -612,7 +644,7 @@
 		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
 		name = "ParCoordsView.h: 13";
 		rLen = 0;
-		rLoc = 283;
+		rLoc = 1360;
 		rType = 0;
 		vrLen = 619;
 		vrLoc = 138;
@@ -622,7 +654,7 @@
 		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
 		name = "ParCoordsView.m: 61";
 		rLen = 0;
-		rLoc = 1800;
+		rLoc = 2877;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 2989;
@@ -632,7 +664,7 @@
 		fRef = 4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */;
 		name = "TrackPadFingersLayer.h: 19";
 		rLen = 0;
-		rLoc = 324;
+		rLoc = 1405;
 		rType = 0;
 		vrLen = 330;
 		vrLoc = 0;
@@ -642,7 +674,7 @@
 		fRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */;
 		name = "TrackPadFingersLayer.m: 29";
 		rLen = 0;
-		rLoc = 859;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 0;
@@ -652,7 +684,7 @@
 		fRef = 4381A01C1058918900C92BFF /* ParCoordsBrushLayer.m */;
 		name = "ParCoordsBrushLayer.m: 78";
 		rLen = 0;
-		rLoc = 2194;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 1139;
@@ -662,7 +694,7 @@
 		fRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */;
 		name = "ParCoordsBackgroundLayer.m: 82";
 		rLen = 0;
-		rLoc = 2507;
+		rLoc = 3585;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 314;
@@ -672,7 +704,7 @@
 		fRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */;
 		name = "ParCoordsBackgroundLayer.m: 82";
 		rLen = 0;
-		rLoc = 2507;
+		rLoc = 3585;
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 642;
@@ -682,7 +714,7 @@
 		fRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */;
 		name = "ParVisXAppDelegate.m: 16";
 		rLen = 0;
-		rLoc = 307;
+		rLoc = 1386;
 		rType = 0;
 		vrLen = 368;
 		vrLoc = 0;
@@ -692,7 +724,7 @@
 		fRef = 256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */;
 		name = "ParVisXAppDelegate.h: 16";
 		rLen = 0;
-		rLoc = 309;
+		rLoc = 1388;
 		rType = 0;
 		vrLen = 315;
 		vrLoc = 0;
@@ -726,16 +758,16 @@
 	};
 	43DCC949105BF61700C8C455 /* TrackPadBgLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 520}}";
-			sepNavSelRange = "{321, 0}";
-			sepNavVisRange = "{0, 327}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 546}}";
+			sepNavSelRange = "{1219, 0}";
+			sepNavVisRange = "{0, 1341}";
 		};
 	};
 	43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 1105}}";
-			sepNavSelRange = "{188, 0}";
-			sepNavVisRange = "{134, 1113}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1378}}";
+			sepNavSelRange = "{1219, 0}";
+			sepNavVisRange = "{0, 1526}";
 		};
 	};
 	8D1107260486CEB800E47090 /* ParVisMT */ = {

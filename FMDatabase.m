@@ -1,3 +1,30 @@
+//
+//  If you are using fmdb in your project, I'd love to hear about it.  Let me 
+//  know at gus@flyingmeat.com.
+//
+//  In short, this is the MIT License.
+//
+//  Copyright (c) 2008 Flying Meat Inc.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
+
 #import "FMDatabase.h"
 #import "unistd.h"
 
@@ -43,7 +70,7 @@
 }
 
 - (BOOL) open {
-	int err = sqlite3_open( [databasePath fileSystemRepresentation], &db );
+	int err = sqlite3_open([databasePath fileSystemRepresentation], &db );
 	if(err != SQLITE_OK) {
         NSLog(@"error opening!: %d", err);
 		return NO;
@@ -52,12 +79,24 @@
 	return YES;
 }
 
-- (void) close {
+#if SQLITE_VERSION_NUMBER >= 3005000
+- (BOOL) openWithFlags:(int)flags {
+    int err = sqlite3_open_v2([databasePath fileSystemRepresentation], &db, flags, NULL /* Name of VFS module to use */);
+	if(err != SQLITE_OK) {
+		NSLog(@"error opening!: %d", err);
+		return NO;
+	}
+	return YES;
+}
+#endif
+
+
+- (BOOL) close {
     
     [self clearCachedStatements];
     
 	if (!db) {
-        return;
+        return YES;
     }
     
     int  rc;
@@ -72,7 +111,7 @@
             if (busyRetryTimeout && (numberOfRetries++ > busyRetryTimeout)) {
                 NSLog(@"%s:%d", __FUNCTION__, __LINE__);
                 NSLog(@"Database busy, unable to close");
-                return;
+                return NO;
             }
         }
         else if (SQLITE_OK != rc) {
@@ -82,6 +121,7 @@
     while (retry);
     
 	db = nil;
+    return YES;
 }
 
 - (void) clearCachedStatements {
@@ -203,7 +243,7 @@
     
     // FIXME - someday check the return codes on these binds.
     else if ([obj isKindOfClass:[NSData class]]) {
-        sqlite3_bind_blob(pStmt, idx, [obj bytes], [obj length], SQLITE_STATIC);
+        sqlite3_bind_blob(pStmt, idx, [obj bytes], (int)[obj length], SQLITE_STATIC);
     }
     else if ([obj isKindOfClass:[NSDate class]]) {
         sqlite3_bind_double(pStmt, idx, [obj timeIntervalSince1970]);
@@ -218,6 +258,9 @@
         }
         else if (strcmp([obj objCType], @encode(long)) == 0) {
             sqlite3_bind_int64(pStmt, idx, [obj longValue]);
+        }
+        else if (strcmp([obj objCType], @encode(long long)) == 0) {
+            sqlite3_bind_int64(pStmt, idx, [obj longLongValue]);
         }
         else if (strcmp([obj objCType], @encode(float)) == 0) {
             sqlite3_bind_double(pStmt, idx, [obj floatValue]);
@@ -234,7 +277,7 @@
     }
 }
 
-- (id) executeQuery:(NSString *)sql arguments:(va_list)args {
+- (id) executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orVAList:(va_list)args {
     
     if (inUse) {
         [self compainAboutInUse];
@@ -285,9 +328,9 @@
                     NSLog(@"DB Error: %d \"%@\"", [self lastErrorCode], [self lastErrorMessage]);
                     NSLog(@"DB Query: %@", sql);
                     if (crashOnErrors) {
-#if defined(__BIG_ENDIAN__) && !TARGET_IPHONE_SIMULATOR
+//#if defined(__BIG_ENDIAN__) && !TARGET_IPHONE_SIMULATOR
 //                        asm{ trap };
-#endif
+//#endif
                         NSAssert2(false, @"DB Error: %d \"%@\"", [self lastErrorCode], [self lastErrorMessage]);
                     }
                 }
@@ -306,7 +349,13 @@
     int queryCount = sqlite3_bind_parameter_count(pStmt); // pointed out by Dominic Yu (thanks!)
     
     while (idx < queryCount) {
-        obj = va_arg(args, id);
+        
+        if (arrayArgs) {
+            obj = [arrayArgs objectAtIndex:idx];
+        }
+        else {
+            obj = va_arg(args, id);
+        }
         
         if (traceExecution) {
             NSLog(@"obj: %@", obj);
@@ -352,14 +401,17 @@
     va_list args;
     va_start(args, sql);
     
-    id result = [self executeQuery:sql arguments:args];
+    id result = [self executeQuery:sql withArgumentsInArray:nil orVAList:args];
     
     va_end(args);
     return result;
 }
 
+- (id) executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments {
+    return [self executeQuery:sql withArgumentsInArray:arguments orVAList:nil];
+}
 
-- (BOOL) executeUpdate:(NSString*)sql arguments:(va_list)args {
+- (BOOL) executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray*)arrayArgs orVAList:(va_list)args {
     
     if (inUse) {
         [self compainAboutInUse];
@@ -408,9 +460,9 @@
                     NSLog(@"DB Error: %d \"%@\"", [self lastErrorCode], [self lastErrorMessage]);
                     NSLog(@"DB Query: %@", sql);
                     if (crashOnErrors) {
-#if defined(__BIG_ENDIAN__) && !TARGET_IPHONE_SIMULATOR
-            //            asm{ trap };
-#endif
+//#if defined(__BIG_ENDIAN__) && !TARGET_IPHONE_SIMULATOR
+//                        asm{ trap };
+//#endif
                         NSAssert2(false, @"DB Error: %d \"%@\"", [self lastErrorCode], [self lastErrorMessage]);
                     }
                 }
@@ -431,7 +483,13 @@
     
     while (idx < queryCount) {
         
-        obj = va_arg(args, id);
+        if (arrayArgs) {
+            obj = [arrayArgs objectAtIndex:idx];
+        }
+        else {
+            obj = va_arg(args, id);
+        }
+        
         
         if (traceExecution) {
             NSLog(@"obj: %@", obj);
@@ -518,17 +576,28 @@
     return (rc == SQLITE_OK);
 }
 
+
 - (BOOL) executeUpdate:(NSString*)sql, ... {
     va_list args;
     va_start(args, sql);
     
-    BOOL result = [self executeUpdate:sql arguments:args];
+    BOOL result = [self executeUpdate:sql withArgumentsInArray:nil orVAList:args];
     
     va_end(args);
     return result;
 }
 
 
+
+- (BOOL) executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments {
+    return [self executeUpdate:sql withArgumentsInArray:arguments orVAList:nil];
+}
+
+/*
+- (id) executeUpdate:(NSString *)sql arguments:(va_list)args {
+    
+}
+*/
 
 - (BOOL) rollback {
     BOOL b = [self executeUpdate:@"ROLLBACK TRANSACTION;"];

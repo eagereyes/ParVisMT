@@ -1,3 +1,30 @@
+//
+//  If you are using fmdb in your project, I'd love to hear about it.  Let me 
+//  know at gus@flyingmeat.com.
+//
+//  In short, this is the MIT License.
+//
+//  Copyright (c) 2008 Flying Meat Inc.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
+
 #import <Foundation/Foundation.h>
 #import "sqlite3.h"
 #import "FMResultSet.h"
@@ -22,7 +49,10 @@
 - (id)initWithPath:(NSString*)inPath;
 
 - (BOOL) open;
-- (void) close;
+#if SQLITE_VERSION_NUMBER >= 3005000
+- (BOOL) openWithFlags:(int)flags;
+#endif
+- (BOOL) close;
 - (BOOL) goodConnection;
 - (void) clearCachedStatements;
 
@@ -41,11 +71,13 @@
 
 - (sqlite3*) sqliteHandle;
 
-- (BOOL) executeUpdate:(NSString *)sql arguments:(va_list)args;
 - (BOOL) executeUpdate:(NSString*)sql, ...;
+- (BOOL) executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments;
+- (id) executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orVAList:(va_list)args; // you shouldn't ever need to call this.  use the previous two instead.
 
-- (id) executeQuery:(NSString *)sql arguments:(va_list)args;
 - (id) executeQuery:(NSString*)sql, ...;
+- (id) executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments;
+- (BOOL) executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray*)arrayArgs orVAList:(va_list)args; // you shouldn't ever need to call this.  use the previous two instead.
 
 - (BOOL) rollback;
 - (BOOL) commit;
