@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* ParVisXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */; };
-		43355A6B11F4A6E600E63B87 /* ParVis X Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */; };
+		43355A6B11F4A6E600E63B87 /* ParVisMT Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 43355A6A11F4A6E600E63B87 /* ParVisMT Icon.icns */; };
 		4373934E10617F0C00A87C62 /* TrackPadFingersLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */; };
 		43819EBE1058363500C92BFF /* ParCoordsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */; };
 		43819FB01058829400C92BFF /* TouchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819FAF1058829400C92BFF /* TouchInfo.m */; };
@@ -35,11 +35,11 @@
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParVisXAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParVisXAppDelegate.m; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* ParVis X_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ParVis X_Prefix.pch"; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* ParVisMT_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParVisMT_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "ParVis X Icon.icns"; sourceTree = "<group>"; };
+		43355A6A11F4A6E600E63B87 /* ParVisMT Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "ParVisMT Icon.icns"; sourceTree = "<group>"; };
 		4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPadFingersLayer.h; sourceTree = "<group>"; };
 		4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPadFingersLayer.m; sourceTree = "<group>"; };
 		43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParCoordsBackgroundLayer.h; sourceTree = "<group>"; };
@@ -63,8 +63,8 @@
 		4398AEBA10582C3100C025AA /* data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.db; sourceTree = "<group>"; };
 		43DCC949105BF61700C8C455 /* TrackPadBgLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPadBgLayer.h; sourceTree = "<group>"; };
 		43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPadBgLayer.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* ParVis X-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParVis X-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* ParVis X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParVis X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107310486CEB800E47090 /* ParVisMT-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParVisMT-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* ParVisMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParVisMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* ParVis X.app */,
+				8D1107320486CEB800E47090 /* ParVisMT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				256AC3F00F4B6AF500CF3369 /* ParVis X_Prefix.pch */,
+				256AC3F00F4B6AF500CF3369 /* ParVisMT_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -144,10 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				4398AEBA10582C3100C025AA /* data.db */,
-				8D1107310486CEB800E47090 /* ParVis X-Info.plist */,
+				8D1107310486CEB800E47090 /* ParVisMT-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
-				43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */,
+				43355A6A11F4A6E600E63B87 /* ParVisMT Icon.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -207,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* ParVis X */ = {
+		8D1107260486CEB800E47090 /* ParVisMT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ParVis X" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ParVisMT" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -219,10 +219,10 @@
 			);
 			dependencies = (
 			);
-			name = "ParVis X";
+			name = ParVisMT;
 			productInstallPath = "$(HOME)/Applications";
 			productName = ParVisX;
-			productReference = 8D1107320486CEB800E47090 /* ParVis X.app */;
+			productReference = 8D1107320486CEB800E47090 /* ParVisMT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,14 +233,14 @@
 			attributes = {
 				ORGANIZATIONNAME = "UNC Charlotte";
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ParVis X" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ParVisMT" */;
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* ParVisX */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* ParVis X */,
+				8D1107260486CEB800E47090 /* ParVisMT */,
 			);
 		};
 /* End PBXProject section */
@@ -253,7 +253,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				4398AEBB10582C3100C025AA /* data.db in Resources */,
-				43355A6B11F4A6E600E63B87 /* ParVis X Icon.icns in Resources */,
+				43355A6B11F4A6E600E63B87 /* ParVisMT Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +311,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParVis X_Prefix.pch";
-				INFOPLIST_FILE = "ParVis X-Info.plist";
+				GCC_PREFIX_HEADER = ParVisMT_Prefix.pch;
+				INFOPLIST_FILE = "ParVisMT-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "ParVis X";
+				PRODUCT_NAME = ParVisMT;
 			};
 			name = Debug;
 		};
@@ -325,10 +325,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ParVis X_Prefix.pch";
-				INFOPLIST_FILE = "ParVis X-Info.plist";
+				GCC_PREFIX_HEADER = ParVisMT_Prefix.pch;
+				INFOPLIST_FILE = "ParVisMT-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = "ParVis X";
+				PRODUCT_NAME = ParVisMT;
 			};
 			name = Release;
 		};
@@ -365,7 +365,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ParVis X" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ParVisMT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -374,7 +374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ParVis X" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ParVisMT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

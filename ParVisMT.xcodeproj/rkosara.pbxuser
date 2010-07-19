@@ -9,31 +9,31 @@
 	};
 	256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 502}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
 			sepNavSelRange = "{309, 0}";
 			sepNavVisRange = "{0, 315}";
 		};
 	};
 	256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 502}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
 			sepNavSelRange = "{307, 0}";
 			sepNavVisRange = "{0, 368}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
-		activeExecutable = 4398ADE01057FF9200C025AA /* ParVis X */;
-		activeTarget = 8D1107260486CEB800E47090 /* ParVis X */;
+		activeExecutable = 4398ADE01057FF9200C025AA /* ParVisMT */;
+		activeTarget = 8D1107260486CEB800E47090 /* ParVisMT */;
 		addToTargets = (
-			8D1107260486CEB800E47090 /* ParVis X */,
+			8D1107260486CEB800E47090 /* ParVisMT */,
 		);
 		breakpoints = (
 			4311F814105C4976000F67C8 /* objc_exception_throw */,
 		);
 		codeSenseManager = 4398ADE61057FFB000C025AA /* Code sense */;
 		executables = (
-			4398ADE01057FF9200C025AA /* ParVis X */,
+			4398ADE01057FF9200C025AA /* ParVisMT */,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
@@ -107,6 +107,16 @@
 			43355A6711F4A6A800E63B87 /* PlistBookmark */ = 43355A6711F4A6A800E63B87 /* PlistBookmark */;
 			43355A6811F4A6A800E63B87 /* PBXBookmark */ = 43355A6811F4A6A800E63B87 /* PBXBookmark */;
 			43355A6911F4A6A800E63B87 /* PBXBookmark */ = 43355A6911F4A6A800E63B87 /* PBXBookmark */;
+			43355A8F11F4C58A00E63B87 /* PlistBookmark */ = 43355A8F11F4C58A00E63B87 /* PlistBookmark */;
+			43355A9011F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9011F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9111F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9111F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9211F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9211F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9311F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9311F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9411F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9411F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9511F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9511F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9611F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9611F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9711F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9711F4C58A00E63B87 /* PBXTextBookmark */;
+			43355A9811F4C58A00E63B87 /* PBXTextBookmark */ = 43355A9811F4C58A00E63B87 /* PBXTextBookmark */;
 			4373938F106195FB00A87C62 = 4373938F106195FB00A87C62 /* PBXTextBookmark */;
 			437393CA1061B87D00A87C62 = 437393CA1061B87D00A87C62 /* PBXTextBookmark */;
 			437393CB1061B87D00A87C62 = 437393CB1061B87D00A87C62 /* PBXTextBookmark */;
@@ -218,7 +228,7 @@
 	};
 	43355A6711F4A6A800E63B87 /* PlistBookmark */ = {
 		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* ParVis X-Info.plist */;
+		fRef = 8D1107310486CEB800E47090 /* ParVisMT-Info.plist */;
 		fallbackIsa = PBXBookmark;
 		isK = 0;
 		kPath = (
@@ -234,6 +244,107 @@
 	43355A6911F4A6A800E63B87 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 43355A6111F4A69400E63B87 /* image.icns */;
+	};
+	43355A8F11F4C58A00E63B87 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* ParVisMT-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/rkosara/Documents/src/multitouchvis/ParVis X-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	43355A9011F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */;
+		name = "TrackPadFingersLayer.h: 19";
+		rLen = 0;
+		rLoc = 324;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	43355A9111F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */;
+		name = "TrackPadFingersLayer.m: 29";
+		rLen = 0;
+		rLoc = 859;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 0;
+	};
+	43355A9211F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */;
+		name = "TrackPadBgLayer.m: 11";
+		rLen = 0;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 134;
+	};
+	43355A9311F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */;
+		name = "ParVisXAppDelegate.m: 16";
+		rLen = 0;
+		rLoc = 307;
+		rType = 0;
+		vrLen = 368;
+		vrLoc = 0;
+	};
+	43355A9411F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 256AC3D80F4B6AC300CF3369 /* ParVisXAppDelegate.h */;
+		name = "ParVisXAppDelegate.h: 16";
+		rLen = 0;
+		rLoc = 309;
+		rType = 0;
+		vrLen = 315;
+		vrLoc = 0;
+	};
+	43355A9511F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */;
+		name = "ParCoordsBackgroundLayer.h: 25";
+		rLen = 0;
+		rLoc = 486;
+		rType = 0;
+		vrLen = 526;
+		vrLoc = 0;
+	};
+	43355A9611F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF11057FFE200C025AA /* ParCoordsView.h */;
+		name = "ParCoordsView.h: 47";
+		rLen = 0;
+		rLoc = 796;
+		rType = 0;
+		vrLen = 572;
+		vrLoc = 338;
+	};
+	43355A9711F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
+		name = "ParCoordsView.m: 313";
+		rLen = 0;
+		rLoc = 9615;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 8866;
+	};
+	43355A9811F4C58A00E63B87 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
+		name = "ParCoordsView.m: 62";
+		rLen = 0;
+		rLoc = 1781;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 0;
 	};
 	4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */ = {
 		uiCtxt = {
@@ -351,7 +462,7 @@
 	};
 	43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 520}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 483}}";
 			sepNavSelRange = "{486, 0}";
 			sepNavVisRange = "{0, 526}";
 		};
@@ -391,7 +502,7 @@
 			sepNavVisRange = "{1139, 1532}";
 		};
 	};
-	4398ADE01057FF9200C025AA /* ParVis X */ = {
+	4398ADE01057FF9200C025AA /* ParVisMT */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -414,7 +525,7 @@
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
-		name = "ParVis X";
+		name = ParVisMT;
 		savedGlobals = {
 		};
 		showTypeColumn = 0;
@@ -453,16 +564,16 @@
 	};
 	4398ADF11057FFE200C025AA /* ParCoordsView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {967, 832}}";
-			sepNavSelRange = "{283, 0}";
-			sepNavVisRange = "{138, 619}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 858}}";
+			sepNavSelRange = "{796, 0}";
+			sepNavVisRange = "{338, 572}";
 		};
 	};
 	4398ADF21057FFE200C025AA /* ParCoordsView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 4199}}";
-			sepNavSelRange = "{1761, 0}";
-			sepNavVisRange = "{2989, 1270}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 4303}}";
+			sepNavSelRange = "{1781, 0}";
+			sepNavVisRange = "{0, 860}";
 			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
 		};
 	};
@@ -511,7 +622,7 @@
 		fRef = 4398ADF21057FFE200C025AA /* ParCoordsView.m */;
 		name = "ParCoordsView.m: 61";
 		rLen = 0;
-		rLoc = 1761;
+		rLoc = 1800;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 2989;
@@ -622,18 +733,18 @@
 	};
 	43DCC94A105BF61700C8C455 /* TrackPadBgLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1024, 1053}}";
+			sepNavIntBoundsRect = "{{0, 0}, {967, 1105}}";
 			sepNavSelRange = "{188, 0}";
-			sepNavVisRange = "{134, 1269}";
+			sepNavVisRange = "{134, 1113}";
 		};
 	};
-	8D1107260486CEB800E47090 /* ParVis X */ = {
+	8D1107260486CEB800E47090 /* ParVisMT */ = {
 		activeExec = 0;
 		executables = (
-			4398ADE01057FF9200C025AA /* ParVis X */,
+			4398ADE01057FF9200C025AA /* ParVisMT */,
 		);
 	};
-	8D1107310486CEB800E47090 /* ParVis X-Info.plist */ = {
+	8D1107310486CEB800E47090 /* ParVisMT-Info.plist */ = {
 		uiCtxt = {
 			sepNavWindowFrame = "{{19, 0}, {936, 778}}";
 		};
