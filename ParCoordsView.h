@@ -44,6 +44,8 @@
 	
 	BOOL fullScreen;
 	
+	BOOL mouseVisible;
+	
 	// maps NSTouch IDs to TouchInfo objects
 	NSMutableDictionary *touchData;
 	

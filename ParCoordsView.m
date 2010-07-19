@@ -58,7 +58,8 @@ const unsigned short kEscKeyCode = 53;
 	fingersLayer.hidden = YES;
 	
 	collectingEvents = NO;
-		
+	
+	mouseVisible = NO;
 	[NSCursor hide];
 }
 
@@ -309,6 +310,12 @@ const unsigned short kEscKeyCode = 53;
 			fullScreen = YES;
 		} else
 			[self exitFullScreenMode];
+	} else if ([[theEvent characters] compare:@"m"] == NSOrderedSame) {
+		if (mouseVisible)
+			[NSCursor hide];
+		else
+			[NSCursor unhide];
+		mouseVisible = !mouseVisible;
 	} else if ([theEvent keyCode] == kEscKeyCode && fullScreen) {
 		[self exitFullScreenMode];
 	}
