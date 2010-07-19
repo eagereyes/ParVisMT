@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* ParVisXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ParVisXAppDelegate.m */; };
+		43355A6B11F4A6E600E63B87 /* ParVis X Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */; };
 		4373934E10617F0C00A87C62 /* TrackPadFingersLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */; };
 		43819EBE1058363500C92BFF /* ParCoordsBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819EBD1058363500C92BFF /* ParCoordsBackgroundLayer.m */; };
 		43819FB01058829400C92BFF /* TouchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 43819FAF1058829400C92BFF /* TouchInfo.m */; };
@@ -38,6 +39,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "ParVis X Icon.icns"; sourceTree = "<group>"; };
 		4373934C10617F0C00A87C62 /* TrackPadFingersLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackPadFingersLayer.h; sourceTree = "<group>"; };
 		4373934D10617F0C00A87C62 /* TrackPadFingersLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackPadFingersLayer.m; sourceTree = "<group>"; };
 		43819EBC1058363500C92BFF /* ParCoordsBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParCoordsBackgroundLayer.h; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				8D1107310486CEB800E47090 /* ParVis X-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				43355A6A11F4A6E600E63B87 /* ParVis X Icon.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				4398AEBB10582C3100C025AA /* data.db in Resources */,
+				43355A6B11F4A6E600E63B87 /* ParVis X Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
