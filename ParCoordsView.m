@@ -36,7 +36,7 @@ const unsigned short kEscKeyCode = 53;
 - (void)awakeFromNib {
 	[self setAcceptsTouchEvents:YES];
 	[self setWantsRestingTouches:YES];
-	
+    
 	data = [[DataSet alloc] init];
 	
 	activeAxis = -1;
